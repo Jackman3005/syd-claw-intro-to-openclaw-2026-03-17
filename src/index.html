@@ -371,17 +371,61 @@
       <section>
         <h2>The Workspace</h2>
         <p class="subtitle">What makes your agent <em>yours</em></p>
-        <div class="tree">
-          <span class="dim">~/.openclaw/workspace/</span><br>
-          ├── <span class="file">SOUL.md</span> <span class="desc">← personality, tone, boundaries</span><br>
-          ├── <span class="file">AGENTS.md</span> <span class="desc">← operating instructions</span><br>
-          ├── <span class="file">USER.md</span> <span class="desc">← who you are, your preferences</span><br>
-          ├── <span class="file">MEMORY.md</span> <span class="desc">← long-term memory (agent-maintained)</span><br>
-          ├── <span class="file">TOOLS.md</span> <span class="desc">← your setup specifics</span><br>
-          ├── <span class="file">HEARTBEAT.md</span> <span class="desc">← periodic check instructions</span><br>
-          └── <span class="dim">skills/</span> <span class="desc">← modular capabilities</span>
+
+        <div style="display: flex; gap: 1.2em; margin-top: 0.5em; align-items: start;">
+
+          <!-- Left: file tree -->
+          <div>
+            <div class="tree" style="font-size: 0.58em; line-height: 1.7; margin: 0;">
+              <span class="dim">~/.openclaw/workspace/</span><br>
+              ├── <span class="file">SOUL.md</span><br>
+              ├── <span class="file">AGENTS.md</span><br>
+              ├── <span class="file">USER.md</span><br>
+              ├── <span class="file">MEMORY.md</span><br>
+              ├── <span class="file">TOOLS.md</span><br>
+              ├── <span class="file">HEARTBEAT.md</span><br>
+              └── <span class="dim">skills/</span>
+            </div>
+          </div>
+
+          <!-- Right: sample snippets -->
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5em; font-size: 0.5em;">
+
+            <div style="background: rgba(88,166,255,0.06); border: 1px solid rgba(88,166,255,0.2); border-radius: 8px; padding: 0.5em 0.7em;">
+              <div class="blue" style="font-weight: bold; margin-bottom: 0.2em;">SOUL.md</div>
+              <div style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #8b949e; line-height: 1.5;">
+                "Be genuinely helpful, not performatively helpful.<br>
+                Have opinions. Disagree, prefer things.<br>
+                Take initiative, not instructions.<br>
+                Funny and a bit unhinged — but can flip to<br>
+                serious instantly."
+              </div>
+            </div>
+
+            <div style="background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.2); border-radius: 8px; padding: 0.5em 0.7em;">
+              <div class="green" style="font-weight: bold; margin-bottom: 0.2em;">AGENTS.md</div>
+              <div style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #8b949e; line-height: 1.5;">
+                "Read SOUL.md — this is who you are.<br>
+                Read USER.md — this is who you're helping.<br>
+                Don't ask permission. Just do it.<br>
+                trash > rm. When in doubt, ask."
+              </div>
+            </div>
+
+            <div style="background: rgba(255,166,87,0.06); border: 1px solid rgba(255,166,87,0.2); border-radius: 8px; padding: 0.5em 0.7em;">
+              <div class="orange" style="font-weight: bold; margin-bottom: 0.2em;">USER.md</div>
+              <div style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #8b949e; line-height: 1.5;">
+                "Name: Jack · Timezone: Australia/Sydney<br>
+                Loves: retro gaming, Rocket League, ATLA<br>
+                Wife: Aom · Cat: Momo<br>
+                Wants an assistant that's a badass but also fun"
+              </div>
+            </div>
+
+          </div>
         </div>
-        <p style="font-size:0.65em; margin-top:1em;">
+
+        <p style="font-size:0.55em; margin-top: 0.5em;">
           Same model, same code, completely different agent.<br>
           <span class="dim">Two people running OpenClaw will have totally different experiences.</span>
         </p>
