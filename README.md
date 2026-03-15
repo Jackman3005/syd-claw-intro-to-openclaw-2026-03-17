@@ -2,6 +2,8 @@
 
 Intro talk for the Sydney OpenClaw Meetup, March 2026.
 
+### 📺 [View the slides](https://jackman3005.github.io/syd-claw-intro-to-openclaw-2026-03-17/)
+
 ## Setup
 
 ```bash

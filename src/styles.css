@@ -164,6 +164,25 @@
   font-size: 0.9em;
 }
 
+/* QR code corner badge */
+.reveal .slides section::after {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 60px;
+  height: 60px;
+  background: url('./qr-slides.svg') no-repeat center/contain;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 10;
+}
+/* Hide QR on title and Q&A slides */
+.reveal .slides section:first-child::after,
+.reveal .slides section:last-child::after {
+  display: none;
+}
+
 /* Security grid */
 .security-grid {
   display: grid;
