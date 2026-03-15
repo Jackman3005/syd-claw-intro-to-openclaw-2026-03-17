@@ -18,12 +18,9 @@
         <p class="subtitle">And why is everyone losing their minds about it</p>
         <br>
         <p class="dim" style="font-size:0.6em;">Jack Coy · SydClaw Meetup · March 2026</p>
-        <div style="margin-top: 1em; display: flex; align-items: center; justify-content: center; gap: 1em;">
-          <img src="./qr-slides.svg" style="width: 140px; height: 140px; opacity: 0.85; filter: invert(1);" alt="QR code to slides">
-          <div style="text-align: left;">
-            <div class="dim" style="font-size: 0.55em;">Follow along on your phone:</div>
-            <a href="https://jackman3005.github.io/syd-claw-intro-to-openclaw-2026-03-17/" target="_blank" style="color: #58a6ff; text-decoration: none; font-size: 0.5em;">jackman3005.github.io/syd-claw-intro-to-openclaw-2026-03-17</a>
-          </div>
+        <div style="margin-top: 1em; display: flex; flex-direction: column; align-items: center; gap: 0.3em;">
+          <img src="./qr-slides.svg" style="width: 140px; height: 140px; filter: invert(1);" alt="QR code to slides">
+          <div class="dim" style="font-size: 0.5em;">View slides · Follow along on your phone</div>
         </div>
       </section>
 
@@ -775,6 +772,12 @@
     </div>
   </div>
 
+  <!-- Fixed QR code overlay — outside reveal, screen-fixed -->
+  <div id="qr-overlay" style="position: fixed; top: 20px; right: 20px; z-index: 100; text-align: center; pointer-events: none;">
+    <img src="./qr-slides.svg" style="width: 120px; height: 120px; filter: invert(1); display: block;" alt="QR code">
+    <div style="color: #8b949e; font-size: 12px; margin-top: 4px; font-family: system-ui, sans-serif;">View Slides</div>
+  </div>
+
   <script src="/node_modules/reveal.js/dist/reveal.js"></script>
   <script>
     Reveal.initialize({
@@ -787,6 +790,15 @@
       width: 1280,
       height: 720,
     });
+
+    // Hide fixed QR on title slide (has its own), show on all others
+    const qr = document.getElementById('qr-overlay');
+    function toggleQR() {
+      const idx = Reveal.getIndices().h;
+      qr.style.display = (idx === 0) ? 'none' : 'block';
+    }
+    Reveal.on('slidechanged', toggleQR);
+    toggleQR();
   </script>
 </body>
 </html>
