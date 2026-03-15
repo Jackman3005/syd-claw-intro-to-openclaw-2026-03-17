@@ -23,100 +23,80 @@
 
       <!-- SLIDE 2: The Hype -->
       <section data-background-color="#0d1117">
-        <div style="position: relative; width: 100%; height: 100%; min-height: 640px;">
+        <h2 style="margin-bottom: 0.1em;">The Hype Is Real</h2>
 
-          <!-- Title -->
-          <div style="text-align: center;">
-            <h2 style="margin-bottom: 0;">The Hype Is Real</h2>
+        <!-- Top row: chart left, stats right — compact -->
+        <div style="display: flex; align-items: center; gap: 1em; margin: 0 auto; max-width: 900px;">
+          <div style="flex: 1; max-width: 480px;">
+            <svg viewBox="0 0 480 140" style="width: 100%; height: auto;">
+              <line x1="40" y1="120" x2="460" y2="120" stroke="#8b949e" stroke-width="0.5"/>
+              <line x1="40" y1="85" x2="460" y2="85" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
+              <line x1="40" y1="50" x2="460" y2="50" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
+              <line x1="40" y1="15" x2="460" y2="15" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
+              <text x="34" y="124" fill="#8b949e" font-size="8" text-anchor="end">0</text>
+              <text x="34" y="89" fill="#8b949e" font-size="8" text-anchor="end">100k</text>
+              <text x="34" y="54" fill="#8b949e" font-size="8" text-anchor="end">200k</text>
+              <text x="34" y="19" fill="#8b949e" font-size="8" text-anchor="end">310k</text>
+              <text x="55" y="134" fill="#8b949e" font-size="7">Nov 25</text>
+              <text x="165" y="134" fill="#8b949e" font-size="7">Jan 26</text>
+              <text x="305" y="134" fill="#8b949e" font-size="7">Feb 26</text>
+              <text x="420" y="134" fill="#8b949e" font-size="7">Mar 26</text>
+              <path d="M 55 120 C 90 119, 140 118, 170 116 C 205 113, 240 104, 300 78 C 335 62, 370 38, 415 20 C 430 15, 445 11, 455 9 L 455 120 Z"
+                    fill="url(#starGrad2)" opacity="0.3"/>
+              <path d="M 55 120 C 90 119, 140 118, 170 116 C 205 113, 240 104, 300 78 C 335 62, 370 38, 415 20 C 430 15, 445 11, 455 9"
+                    fill="none" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+              <path d="M 55 120 C 90 119, 140 118, 170 116 C 205 113, 240 104, 300 78 C 335 62, 370 38, 415 20 C 430 15, 445 11, 455 9"
+                    fill="none" stroke="#58a6ff" stroke-width="5" stroke-linecap="round" opacity="0.15"/>
+              <circle cx="455" cy="9" r="3" fill="#58a6ff"/>
+              <circle cx="455" cy="9" r="6" fill="#58a6ff" opacity="0.2"/>
+              <defs>
+                <linearGradient id="starGrad2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.4"/>
+                  <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div style="text-align: left;">
+            <div style="font-size: 1.3em; font-weight: bold; color: #58a6ff; line-height: 1.1;">310k ⭐ stars</div>
+            <div class="dim" style="font-size: 0.55em;">in ~4 months</div>
+            <div style="font-size: 0.55em; margin-top: 0.2em; color: #ffa657; font-weight: bold;">#9 GitHub repo of all time</div>
+            <div class="dim" style="font-size: 0.48em;">Surpassed React in 60 days</div>
+          </div>
+        </div>
+
+        <!-- Quotes grid — 3 columns, scattered feel -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5em; margin-top: 0.6em; padding: 0 0.5em; font-size: 0.46em;">
+
+          <div style="transform: rotate(-1.5deg); background: rgba(126,231,135,0.08); border-left: 3px solid rgba(126,231,135,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Cleared 10,000 emails from my inbox on day one."
+          </div>
+          <div style="transform: rotate(1deg); background: rgba(255,166,87,0.08); border-left: 3px solid rgba(255,166,87,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Rebuilt my entire site via Telegram while watching Netflix. Never opened my laptop."
+          </div>
+          <div style="transform: rotate(-0.5deg); background: rgba(88,166,255,0.08); border-left: 3px solid rgba(88,166,255,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Reviewed logs, identified root cause, fixed configs, redeployed. All over voice while walking the dog."
           </div>
 
-          <!-- Star chart + stats row -->
-          <div style="display: flex; align-items: center; gap: 1.5em; margin-top: 0.3em; padding: 0 1em;">
-            <!-- Chart -->
-            <div style="flex: 1;">
-              <svg viewBox="0 0 520 200" style="width: 100%; height: auto;">
-                <line x1="45" y1="170" x2="500" y2="170" stroke="#8b949e" stroke-width="0.5"/>
-                <line x1="45" y1="125" x2="500" y2="125" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
-                <line x1="45" y1="80" x2="500" y2="80" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
-                <line x1="45" y1="35" x2="500" y2="35" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
-                <text x="38" y="174" fill="#8b949e" font-size="9" text-anchor="end">0</text>
-                <text x="38" y="129" fill="#8b949e" font-size="9" text-anchor="end">100k</text>
-                <text x="38" y="84" fill="#8b949e" font-size="9" text-anchor="end">200k</text>
-                <text x="38" y="39" fill="#8b949e" font-size="9" text-anchor="end">310k</text>
-                <text x="60" y="188" fill="#8b949e" font-size="9">Nov 25</text>
-                <text x="180" y="188" fill="#8b949e" font-size="9">Jan 26</text>
-                <text x="330" y="188" fill="#8b949e" font-size="9">Feb 26</text>
-                <text x="460" y="188" fill="#8b949e" font-size="9">Mar 26</text>
-                <!-- Area fill -->
-                <path d="M 60 170 C 100 169, 150 168, 180 166 C 220 162, 260 150, 320 120 C 360 98, 400 65, 440 40 C 460 30, 480 22, 495 18 L 495 170 Z"
-                      fill="url(#starGradient)" opacity="0.3"/>
-                <!-- Line -->
-                <path d="M 60 170 C 100 169, 150 168, 180 166 C 220 162, 260 150, 320 120 C 360 98, 400 65, 440 40 C 460 30, 480 22, 495 18"
-                      fill="none" stroke="#58a6ff" stroke-width="2.5" stroke-linecap="round"/>
-                <!-- Glow -->
-                <path d="M 60 170 C 100 169, 150 168, 180 166 C 220 162, 260 150, 320 120 C 360 98, 400 65, 440 40 C 460 30, 480 22, 495 18"
-                      fill="none" stroke="#58a6ff" stroke-width="6" stroke-linecap="round" opacity="0.15"/>
-                <!-- Dot at end -->
-                <circle cx="495" cy="18" r="4" fill="#58a6ff"/>
-                <circle cx="495" cy="18" r="8" fill="#58a6ff" opacity="0.2"/>
-                <defs>
-                  <linearGradient id="starGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.4"/>
-                    <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <!-- Stats -->
-            <div style="flex-shrink: 0; text-align: right; padding-right: 0.5em;">
-              <div style="font-size: 1.8em; font-weight: bold; color: #58a6ff; line-height: 1.1;">310k stars</div>
-              <div class="dim" style="font-size: 0.6em; margin-top: 0.2em;">in ~4 months</div>
-              <div style="font-size: 0.55em; margin-top: 0.3em; color: #ffa657; font-weight: bold;">#9 GitHub repo of all time</div>
-              <div class="dim" style="font-size: 0.5em;">Surpassed React in 60 days</div>
-            </div>
+          <div style="transform: rotate(0.5deg); background: rgba(248,81,73,0.06); border-left: 3px solid rgba(248,81,73,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Less than 24 hours in: cleaned up Linear issues, wrote email follow-ups, opened 3 PRs."
+          </div>
+          <div style="transform: rotate(-1deg); background: rgba(126,231,135,0.08); border-left: 3px solid rgba(126,231,135,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Built a weekly meal planning system. Shopping lists sorted by store and aisle."
+          </div>
+          <div style="transform: rotate(1.5deg); background: rgba(88,166,255,0.08); border-left: 3px solid rgba(88,166,255,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Morning brief: weather, calendar, health stats, trending topics, a quote from my books."
           </div>
 
-          <!-- Scattered quote bubbles below the chart -->
-          <div style="position: relative; height: 290px; margin-top: 0.4em;">
-
-            <div style="position: absolute; top: 0; left: 20px; transform: rotate(-2deg); background: rgba(126,231,135,0.08); border-left: 3px solid rgba(126,231,135,0.5); border-radius: 4px 12px 12px 4px; padding: 0.35em 0.7em; font-size: 0.46em; max-width: 270px; font-style: italic;">
-              "Cleared 10,000 emails from my inbox on day one."
-            </div>
-
-            <div style="position: absolute; top: 0; right: 20px; transform: rotate(1.5deg); background: rgba(255,166,87,0.08); border-left: 3px solid rgba(255,166,87,0.5); border-radius: 4px 12px 12px 4px; padding: 0.35em 0.7em; font-size: 0.46em; max-width: 300px; font-style: italic;">
-              "Rebuilt my entire site via Telegram while watching Netflix. Never opened my laptop."
-            </div>
-
-            <div style="position: absolute; top: 72px; left: 40px; transform: rotate(1deg); background: rgba(88,166,255,0.08); border-left: 3px solid rgba(88,166,255,0.5); border-radius: 4px 12px 12px 4px; padding: 0.35em 0.7em; font-size: 0.43em; max-width: 310px; font-style: italic;">
-              "Reviewed logs, identified root cause, fixed configs, redeployed. All over voice while walking the dog."
-            </div>
-
-            <div style="position: absolute; top: 72px; right: 30px; transform: rotate(-1.5deg); background: rgba(248,81,73,0.06); border-left: 3px solid rgba(248,81,73,0.5); border-radius: 4px 12px 12px 4px; padding: 0.35em 0.7em; font-size: 0.46em; max-width: 280px; font-style: italic;">
-              "Less than 24 hours in: cleaned up Linear issues, wrote email follow-ups, opened 3 PRs."
-            </div>
-
-            <div style="position: absolute; top: 148px; left: 15px; transform: rotate(-0.5deg); background: rgba(126,231,135,0.08); border-left: 3px solid rgba(126,231,135,0.5); border-radius: 4px 12px 12px 4px; padding: 0.35em 0.7em; font-size: 0.46em; max-width: 280px; font-style: italic;">
-              "Built a weekly meal planning system. Shopping lists sorted by store and aisle."
-            </div>
-
-            <div style="position: absolute; top: 148px; right: 15px; transform: rotate(2deg); background: rgba(88,166,255,0.08); border-left: 3px solid rgba(88,166,255,0.5); border-radius: 4px 12px 12px 4px; padding: 0.35em 0.7em; font-size: 0.46em; max-width: 290px; font-style: italic;">
-              "Morning brief: weather, calendar, health stats, trending topics, a quote from my books."
-            </div>
-
-            <div style="position: absolute; top: 222px; left: 50%; transform: translateX(-50%) rotate(0.5deg); background: rgba(255,166,87,0.08); border-left: 3px solid rgba(255,166,87,0.5); border-radius: 4px 12px 12px 4px; padding: 0.35em 0.7em; font-size: 0.43em; max-width: 340px; font-style: italic;">
-              "Set up on my Raspberry Pi with Cloudflare. Built a website from my phone in minutes."
-            </div>
-
-          </div>
-
-          <!-- Bottom text -->
-          <div style="position: absolute; bottom: 12px; left: 0; right: 0; text-align: center;">
-            <p class="dim" style="font-size: 0.48em; margin: 0;">
-              Real quotes from the community. So... let's talk about what this actually is.
-            </p>
+          <div style="grid-column: 2; transform: rotate(-0.5deg); background: rgba(255,166,87,0.08); border-left: 3px solid rgba(255,166,87,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Set up on my Raspberry Pi with Cloudflare. Built a website from my phone in minutes."
           </div>
 
         </div>
+
+        <p class="dim" style="font-size: 0.48em; margin-top: 0.5em;">
+          Real quotes from the community. So... let's talk about what this actually is.
+        </p>
       </section>
 
       <!-- SLIDE 3: The AI tool landscape -->
