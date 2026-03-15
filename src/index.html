@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is OpenClaw? — SydClaw Meetup</title>
+  <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Title -->
+      <section>
+        <h1>🦞 What is OpenClaw?</h1>
+        <p class="subtitle">And why is everyone losing their minds about it</p>
+        <br>
+        <p class="dim" style="font-size:0.6em;">Jack Coy · SydClaw Meetup · March 2026</p>
+      </section>
+
+      <!-- SLIDE 2: The AI tool landscape -->
+      <section>
+        <h2>The AI Tool Landscape</h2>
+        <p class="subtitle">Where does OpenClaw fit?</p>
+        <div class="landscape-grid">
+          <div class="landscape-row">
+            <span class="landscape-label">💬 Chat UIs</span>
+            <span class="landscape-tools">ChatGPT, Claude.ai, Gemini</span>
+            <span class="landscape-desc">You go to a website, ask a question</span>
+          </div>
+          <div class="landscape-row">
+            <span class="landscape-label">💻 Coding Agents</span>
+            <span class="landscape-tools">Claude Code, Codex, Cursor</span>
+            <span class="landscape-desc">AI reads/writes code in your repo</span>
+          </div>
+          <div class="landscape-row">
+            <span class="landscape-label">⚡ Automation</span>
+            <span class="landscape-tools">Zapier, Make, n8n</span>
+            <span class="landscape-desc">When X happens → do Y. No intelligence.</span>
+          </div>
+          <div class="landscape-row">
+            <span class="landscape-label">🔧 Agent Frameworks</span>
+            <span class="landscape-tools">LangChain, CrewAI, AutoGen</span>
+            <span class="landscape-desc">Dev tools to <em>build</em> agents</span>
+          </div>
+          <div class="landscape-row active">
+            <span class="landscape-label">🦞 Personal Agents</span>
+            <span class="landscape-tools">OpenClaw</span>
+            <span class="landscape-desc">Always-on AI that lives on your machine</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: The key shift -->
+      <section>
+        <h2>The Key Shift</h2>
+        <br>
+        <div class="compare-grid">
+          <div class="compare-box">
+            <h4 class="dim">🔍 Reactive AI</h4>
+            <ul>
+              <li>You go to the AI</li>
+              <li>You ask a question</li>
+              <li>You get an answer</li>
+              <li>Session ends</li>
+            </ul>
+            <p class="dim" style="font-size:0.85em; margin-top:0.8em;">ChatGPT, Claude.ai, coding agents...</p>
+          </div>
+          <div class="compare-box" style="border: 1px solid rgba(88,166,255,0.3);">
+            <h4 class="blue">🦞 Proactive AI</h4>
+            <ul>
+              <li>The AI is always running</li>
+              <li>It monitors, checks, schedules</li>
+              <li>It reaches out to <em>you</em></li>
+              <li>It remembers everything</li>
+            </ul>
+            <p class="blue" style="font-size:0.85em; margin-top:0.8em;">OpenClaw</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Architecture overview -->
+      <section>
+        <h2>How It Works</h2>
+        <p class="subtitle">Three core pieces</p>
+        <div class="arch-container">
+          <div class="arch-box arch-channels">
+            <div style="font-size:1.4em;">📱</div>
+            <div class="green" style="font-weight:bold;">Channels</div>
+            <div class="dim" style="font-size:0.85em; margin-top:0.3em;">
+              WhatsApp<br>Telegram<br>Discord<br>iMessage<br>Slack
+            </div>
+          </div>
+          <div class="arch-arrow">⟷</div>
+          <div class="arch-box arch-gateway">
+            <div style="font-size:1.4em;">🧠</div>
+            <div class="blue" style="font-weight:bold; font-size:1.1em;">Gateway</div>
+            <div class="dim" style="font-size:0.85em; margin-top:0.3em;">
+              Always-on daemon<br>Agent loop<br>Sessions & memory<br>Cron & heartbeats
+            </div>
+          </div>
+          <div class="arch-arrow">⟷</div>
+          <div class="arch-box arch-tools">
+            <div style="font-size:1.4em;">🔧</div>
+            <div class="orange" style="font-weight:bold;">Tools & Models</div>
+            <div class="dim" style="font-size:0.85em; margin-top:0.3em;">
+              Shell / filesystem<br>Web search / browser<br>Claude, GPT, Gemini<br>Sub-agents
+            </div>
+          </div>
+        </div>
+        <p class="dim" style="font-size:0.55em; margin-top:1.5em;">
+          Message comes in → Gateway runs agent turn → Agent thinks + uses tools → Response goes back out
+        </p>
+      </section>
+
+      <!-- SLIDE 5: The Workspace -->
+      <section>
+        <h2>The Workspace</h2>
+        <p class="subtitle">What makes your agent <em>yours</em></p>
+        <div class="tree">
+          <span class="dim">~/.openclaw/workspace/</span><br>
+          ├── <span class="file">SOUL.md</span> <span class="desc">← personality, tone, boundaries</span><br>
+          ├── <span class="file">AGENTS.md</span> <span class="desc">← operating instructions</span><br>
+          ├── <span class="file">USER.md</span> <span class="desc">← who you are, your preferences</span><br>
+          ├── <span class="file">MEMORY.md</span> <span class="desc">← long-term memory (agent-maintained)</span><br>
+          ├── <span class="file">TOOLS.md</span> <span class="desc">← your setup specifics</span><br>
+          ├── <span class="file">HEARTBEAT.md</span> <span class="desc">← periodic check instructions</span><br>
+          └── <span class="dim">skills/</span> <span class="desc">← modular capabilities</span>
+        </div>
+        <p style="font-size:0.65em; margin-top:1em;">
+          Same model, same code, completely different agent.<br>
+          <span class="dim">Two people running OpenClaw will have totally different experiences.</span>
+        </p>
+      </section>
+
+      <!-- SLIDE 6: vs Coding Agents -->
+      <section>
+        <h2>OpenClaw vs Coding Agents</h2>
+        <div class="compare-grid">
+          <div class="compare-box">
+            <h4 class="dim">💻 Claude Code / Codex</h4>
+            <ul>
+              <li>Lives in your terminal</li>
+              <li>You open it, use it, close it</li>
+              <li>Scoped to your codebase</li>
+              <li>No persistent memory</li>
+              <li>No messaging integration</li>
+              <li>Amazing at coding</li>
+            </ul>
+          </div>
+          <div class="compare-box" style="border: 1px solid rgba(88,166,255,0.3);">
+            <h4 class="blue">🦞 OpenClaw</h4>
+            <ul>
+              <li>Always running on your machine</li>
+              <li>Messages you on WhatsApp/Discord</li>
+              <li>Knows about your <em>life</em>, not just code</li>
+              <li>Persistent memory across sessions</li>
+              <li>Cron jobs, heartbeats, automation</li>
+              <li>Can spawn coding agents <em>inside</em> it</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dim" style="font-size:0.6em; margin-top:1em;">They're complementary, not competing. You can run Claude Code <em>as a sub-agent</em> inside OpenClaw.</p>
+      </section>
+
+      <!-- SLIDE 7: What can you do with it? -->
+      <section>
+        <h2>What Can You Do With It?</h2>
+        <div class="cap-grid">
+          <div class="cap-card">
+            <div class="cap-icon">💬</div>
+            <div class="cap-title">Multi-Channel Chat</div>
+            <div class="cap-desc">Talk to your AI on WhatsApp, Telegram, Discord — not a web UI</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-icon">⏰</div>
+            <div class="cap-title">Proactive & Scheduled</div>
+            <div class="cap-desc">Heartbeats, cron jobs, monitoring — it reaches out to you</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-icon">🧠</div>
+            <div class="cap-title">Memory</div>
+            <div class="cap-desc">Remembers your preferences, past conversations, decisions</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-icon">🤖</div>
+            <div class="cap-title">Sub-Agents</div>
+            <div class="cap-desc">Spawn coding agents, research tasks, parallel workers</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-icon">📱</div>
+            <div class="cap-title">Mobile Nodes</div>
+            <div class="cap-desc">Connect your phone — camera, location, notifications</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-icon">🧩</div>
+            <div class="cap-title">Skills & Plugins</div>
+            <div class="cap-desc">Modular capabilities from ClawHub — like npm for agents</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Getting Started -->
+      <section>
+        <h2>Getting Started</h2>
+        <p class="subtitle">~5 minutes to your first conversation</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <strong>Install</strong><br>
+              <code>npm install -g openclaw</code><br>
+              <span class="dim">Node.js 20+. Mac, Linux, WSL2, Raspberry Pi.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <strong>Setup</strong><br>
+              <code>openclaw setup</code><br>
+              <span class="dim">Creates config + workspace. Add your API key (Anthropic, OpenAI, etc).</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <strong>Connect a channel</strong><br>
+              <code>openclaw channels login</code><br>
+              <span class="dim">Scan QR for WhatsApp, paste token for Telegram/Discord.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <strong>Start the Gateway</strong><br>
+              <code>openclaw gateway</code><br>
+              <span class="dim">Your agent is now live. Send it a message! 🦞</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Security -->
+      <section>
+        <h2>Security Considerations</h2>
+        <p class="subtitle">It has real access — treat it accordingly</p>
+        <div class="security-grid">
+          <div class="security-item">
+            <span class="security-icon">🔒</span>
+            <div>
+              <strong>Local-first</strong><br>
+              <span class="dim">Your data stays on your machine. Only external calls are to your LLM provider.</span>
+            </div>
+          </div>
+          <div class="security-item">
+            <span class="security-icon">👤</span>
+            <div>
+              <strong>allowFrom</strong><br>
+              <span class="dim">Restrict who can talk to your agent. Don't run open-to-the-world.</span>
+            </div>
+          </div>
+          <div class="security-item">
+            <span class="security-icon">🛡️</span>
+            <div>
+              <strong>Tool policies</strong><br>
+              <span class="dim">Control what commands the agent can run. Sandbox mode available.</span>
+            </div>
+          </div>
+          <div class="security-item">
+            <span class="security-icon">🔑</span>
+            <div>
+              <strong>Gateway auth</strong><br>
+              <span class="dim">Token-protected WebSocket. Especially important for remote access.</span>
+            </div>
+          </div>
+          <div class="security-item">
+            <span class="security-icon">📁</span>
+            <div>
+              <strong>Workspace = memory</strong><br>
+              <span class="dim">Treat workspace files like personal data — because they are.</span>
+            </div>
+          </div>
+          <div class="security-item">
+            <span class="security-icon">🐢</span>
+            <div>
+              <strong>Start conservative</strong><br>
+              <span class="dim">Lock it down first, open up as you build trust with the agent.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: The vibe -->
+      <section>
+        <h2>The Real Point</h2>
+        <br>
+        <p style="font-size:1.1em;">
+          OpenClaw is <span class="highlight">infrastructure for a personal AI agent</span>
+          <br>that actually integrates into your life.
+        </p>
+        <br>
+        <p class="dim" style="font-size:0.75em;">
+          Not another chat UI. Not another coding tool.<br>
+          An always-on assistant that knows you, learns from you,<br>
+          and reaches out when something matters.
+        </p>
+        <br>
+        <p style="font-size:0.65em;">
+          <span class="green">github.com/openclaw/openclaw</span> · 
+          <span class="blue">docs.openclaw.ai</span> · 
+          <span class="orange">clawhub.com</span>
+        </p>
+      </section>
+
+      <!-- SLIDE 11: Q&A -->
+      <section>
+        <h1 class="emoji-big">🦞</h1>
+        <h2>Questions?</h2>
+        <br>
+        <p class="dim" style="font-size:0.7em;">
+          Next up: Memory Systems & Building Long-Term Context
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+  <script type="module">
+    import Reveal from '/node_modules/reveal.js/dist/reveal.esm.js';
+    Reveal.initialize({
+      hash: true,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      controlsTutorial: false,
+      progress: true,
+      center: true,
+      width: 1280,
+      height: 720,
+    });
+  </script>
+</body>
+</html>
