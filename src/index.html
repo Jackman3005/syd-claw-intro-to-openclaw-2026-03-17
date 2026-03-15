@@ -511,31 +511,59 @@
         </div>
       </section>
 
-      <!-- SLIDE 14: How You Stay Safe -->
+      <!-- SLIDE 14: Managing Your Risk -->
       <section>
-        <h2>How You Stay Safe</h2>
-        <p class="subtitle">Start locked down, open up as you build trust</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; margin-top: 0.8em; font-size: 0.65em; text-align: left;">
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
-            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">👤 allowFrom</div>
-            <div class="dim">Whitelist who can talk to your agent. Never run open-to-the-world. Start with just your own number.</div>
+        <h2>Managing Your Risk</h2>
+        <p class="subtitle">It can only do what you've given it access to</p>
+
+        <div style="display: flex; gap: 1em; margin-top: 0.8em; font-size: 0.6em; text-align: left; align-items: stretch;">
+
+          <!-- Left: the principle -->
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 0.6em;">
+            <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.15);">
+              <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🧠 Be intentional about what you connect</div>
+              <div class="dim">Every integration you add is access you're granting — permanently, until you revoke it. Only connect what you need, when you need it, with the minimum scope to get the job done.</div>
+            </div>
+            <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.15);">
+              <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🔍 Understand what you're actually exposing</div>
+              <div class="dim">"Read my recent emails" might mean access to <em>all</em> emails. "Let it post in Discord" is different from "let it message as me on WhatsApp." Know what each permission actually grants — not just what you intend to use it for.</div>
+            </div>
+            <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.15);">
+              <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">⚠️ Every scope is an attack surface</div>
+              <div class="dim">Prompt injection means someone else could potentially exploit any access you've granted. The more integrations connected, the more damage a malicious prompt could do.</div>
+            </div>
           </div>
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
-            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🛡️ Tool policies & sandbox</div>
-            <div class="dim">Control what the agent can execute. Sandbox mode restricts filesystem access. Allowlists limit which commands are permitted.</div>
+
+          <!-- Right: trust gradient -->
+          <div style="flex: 0.8; padding: 0.8em; border-radius: 12px; background: rgba(88,166,255,0.06); border: 1px solid rgba(88,166,255,0.2); display: flex; flex-direction: column; justify-content: center;">
+            <div class="blue" style="font-weight: bold; font-size: 1.1em; margin-bottom: 0.5em; text-align: center;">🐢 The Trust Gradient</div>
+            <div style="display: flex; flex-direction: column; gap: 0.5em;">
+              <div style="display: flex; align-items: center; gap: 0.5em;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #7ee787; flex-shrink: 0;"></div>
+                <div class="dim">Start with chat only — no integrations</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5em;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #58a6ff; flex-shrink: 0;"></div>
+                <div class="dim">Add tools as you need them</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5em;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #58a6ff; flex-shrink: 0;"></div>
+                <div class="dim">Observe how it behaves with each one</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5em;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #ffa657; flex-shrink: 0;"></div>
+                <div class="dim">Grant more access over time based on trust</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5em;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #ffa657; flex-shrink: 0;"></div>
+                <div class="dim">Stay conscious of your total exposure</div>
+              </div>
+            </div>
+            <div class="dim" style="text-align: center; margin-top: 0.6em; font-size: 0.9em; font-style: italic;">
+              Like onboarding a new employee —<br>more responsibility over time.
+            </div>
           </div>
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
-            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🔑 Gateway auth token</div>
-            <div class="dim">Protect your WebSocket endpoint. Essential if you expose the gateway remotely via Tailscale or SSH tunnel.</div>
-          </div>
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
-            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">📱 Separate phone number</div>
-            <div class="dim">For WhatsApp: use a dedicated SIM. Don't link your personal WhatsApp — every message becomes agent input.</div>
-          </div>
-          <div style="grid-column: 1 / 3; padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2); text-align: center;">
-            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🐢 The Trust Gradient</div>
-            <div class="dim">Start with heartbeats off, strict allowlists, and read-only tools. Gradually give more access as you understand the agent's behavior. Think of it like a new employee — more responsibility over time.</div>
-          </div>
+
         </div>
       </section>
 
