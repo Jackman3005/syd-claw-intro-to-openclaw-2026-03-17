@@ -387,61 +387,6 @@
         </p>
       </section>
 
-      <!-- SLIDE 10: Where does your data go? -->
-      <section>
-        <h2>Where Does Your Data Go?</h2>
-        <p class="subtitle">Know the boundaries before you share your secrets</p>
-
-        <div style="display: flex; justify-content: center; align-items: start; gap: 1em; margin-top: 1em; font-size: 0.6em;">
-
-          <!-- Your Machine -->
-          <div style="min-width: 180px; padding: 0.8em; border-radius: 12px; background: rgba(126,231,135,0.1); border: 1px solid rgba(126,231,135,0.3); text-align: center;">
-            <div style="font-size: 1.5em;">🏠</div>
-            <div class="green" style="font-weight: bold; margin: 0.3em 0;">Your Machine</div>
-            <div class="dim" style="font-size: 0.9em; text-align: left;">
-              Workspace files<br>
-              Memory & history<br>
-              Config & secrets<br>
-              Session transcripts
-            </div>
-            <div class="green" style="margin-top: 0.5em; font-size: 0.85em;">✅ You control this</div>
-          </div>
-
-          <!-- Arrows out -->
-          <div style="display: flex; flex-direction: column; gap: 1.5em; padding-top: 1em;">
-            <div style="text-align: center;">
-              <div class="dim">→ prompts →</div>
-            </div>
-            <div style="text-align: center;">
-              <div class="dim">→ messages →</div>
-            </div>
-            <div style="text-align: center;">
-              <div class="dim">→ fetches →</div>
-            </div>
-          </div>
-
-          <!-- External destinations -->
-          <div style="display: flex; flex-direction: column; gap: 0.6em;">
-            <div style="padding: 0.6em 0.8em; border-radius: 10px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.2);">
-              <div class="orange" style="font-weight: bold;">🤖 LLM Provider *</div>
-              <div class="dim" style="font-size: 0.9em;">Anthropic, OpenAI, Google...<br>Sees everything in your prompt:<br>workspace files, memory, conversation</div>
-            </div>
-            <div style="padding: 0.6em 0.8em; border-radius: 10px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.2);">
-              <div class="orange" style="font-weight: bold;">💬 Connected Services</div>
-              <div class="dim" style="font-size: 0.9em;">Discord, WhatsApp, Calendar, Email...<br>Can send messages, create events,<br>post data on your behalf</div>
-            </div>
-            <div style="padding: 0.6em 0.8em; border-radius: 10px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.2);">
-              <div class="orange" style="font-weight: bold;">🌐 The Internet</div>
-              <div class="dim" style="font-size: 0.9em;">Web search, file downloads,<br>APIs and websites<br><br>The agent can reach out to any<br>public internet resource</div>
-            </div>
-          </div>
-
-        </div>
-
-        <p style="font-size: 0.55em; margin-top: 0.8em;">
-          <span class="highlight">* Self-hosted LLM?</span> Prompts stay on your network. <span class="dim">Remote LLM? Your context leaves your machine with every request.</span>
-        </p>
-      </section>
 
       <!-- SLIDE 11: What people are doing with it (use cases) -->
       <section>
@@ -522,6 +467,62 @@
             <span class="dim"> — Observes, reflects, consolidates. <em>More in my next talk →</em></span>
           </div>
         </div>
+      </section>
+
+      <!-- SLIDE 12: Where does your data go? -->
+      <section>
+        <h2>Where Does Your Data Go?</h2>
+        <p class="subtitle">Know the boundaries before you share your secrets</p>
+
+        <div style="display: flex; justify-content: center; align-items: start; gap: 1em; margin-top: 1em; font-size: 0.6em;">
+
+          <!-- Your Machine -->
+          <div style="min-width: 180px; padding: 0.8em; border-radius: 12px; background: rgba(126,231,135,0.1); border: 1px solid rgba(126,231,135,0.3); text-align: center;">
+            <div style="font-size: 1.5em;">🏠</div>
+            <div class="green" style="font-weight: bold; margin: 0.3em 0;">Your Machine</div>
+            <div class="dim" style="font-size: 0.9em; text-align: left;">
+              Workspace files<br>
+              Memory & history<br>
+              Config & secrets<br>
+              Session transcripts
+            </div>
+            <div class="green" style="margin-top: 0.5em; font-size: 0.85em;">✅ You control this</div>
+          </div>
+
+          <!-- Arrows out -->
+          <div style="display: flex; flex-direction: column; gap: 1.5em; padding-top: 1em;">
+            <div style="text-align: center;">
+              <div class="dim">→ prompts →</div>
+            </div>
+            <div style="text-align: center;">
+              <div class="dim">→ messages →</div>
+            </div>
+            <div style="text-align: center;">
+              <div class="dim">→ fetches →</div>
+            </div>
+          </div>
+
+          <!-- External destinations -->
+          <div style="display: flex; flex-direction: column; gap: 0.6em;">
+            <div style="padding: 0.6em 0.8em; border-radius: 10px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.2);">
+              <div class="orange" style="font-weight: bold;">🤖 LLM Provider *</div>
+              <div class="dim" style="font-size: 0.9em;">Anthropic, OpenAI, Google...<br>Sees everything in your prompt:<br>workspace files, memory, conversation</div>
+            </div>
+            <div style="padding: 0.6em 0.8em; border-radius: 10px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.2);">
+              <div class="orange" style="font-weight: bold;">💬 Connected Services</div>
+              <div class="dim" style="font-size: 0.9em;">Discord, WhatsApp, Calendar, Email...<br>Can send messages, create events,<br>post data on your behalf</div>
+            </div>
+            <div style="padding: 0.6em 0.8em; border-radius: 10px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.2);">
+              <div class="orange" style="font-weight: bold;">🌐 The Internet</div>
+              <div class="dim" style="font-size: 0.9em;">Web search, file downloads,<br>APIs and websites<br><br>The agent can reach out to any<br>public internet resource</div>
+            </div>
+          </div>
+
+        </div>
+
+        <p style="font-size: 0.55em; margin-top: 0.8em;">
+          <span class="highlight">* Self-hosted LLM?</span> Prompts stay on your network. <span class="dim">Remote LLM? Your context leaves your machine with every request.</span>
+        </p>
       </section>
 
       <!-- SLIDE 13: What Could Go Wrong -->
