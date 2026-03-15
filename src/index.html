@@ -169,36 +169,87 @@
       <!-- SLIDE 6: Context is everything -->
       <section>
         <h2>Context Is Everything</h2>
-        <p class="subtitle">The model is the same. The context makes it yours.</p>
-        <div style="display: flex; gap: 0.8em; margin-top: 1.2em; font-size: 0.65em; text-align: left;">
-          <div style="flex: 1; padding: 0.8em; border-radius: 10px; background: rgba(255,255,255,0.03);">
-            <div style="font-size: 1.3em; margin-bottom: 0.3em;">💬</div>
-            <div class="dim" style="font-weight: bold; margin-bottom: 0.3em;">Zero context</div>
-            <div class="dim">"What should I have for dinner?"</div>
-            <div style="margin-top: 0.4em;">Generic answer. Model knows nothing about you.</div>
+        <p class="subtitle">Same model. The only difference is what it knows.</p>
+
+        <div style="display: flex; gap: 0.7em; margin-top: 0.6em; font-size: 0.52em; text-align: left;">
+
+          <!-- Chat 1: Fresh session -->
+          <div style="flex: 1; display: flex; flex-direction: column;">
+            <div class="dim" style="font-weight: bold; text-align: center; margin-bottom: 0.4em; font-size: 1.1em;">Fresh session</div>
+            <div style="flex: 1; border-radius: 12px; background: rgba(255,255,255,0.03); padding: 0.7em; display: flex; flex-direction: column; justify-content: flex-end;">
+              <!-- Chat bubbles -->
+              <div style="background: rgba(88,166,255,0.2); padding: 0.4em 0.7em; border-radius: 10px 10px 2px 10px; margin-left: 2em; margin-bottom: 0.4em;">
+                What should I have for dinner?
+              </div>
+              <div style="background: rgba(255,255,255,0.06); padding: 0.4em 0.7em; border-radius: 10px 10px 10px 2px; margin-right: 2em;">
+                Here are some popular options: pasta, stir fry, tacos, grilled chicken, salad...
+              </div>
+              <div class="dim" style="text-align: center; margin-top: 0.6em; font-size: 0.9em;">
+                Generic answer.<br>Model knows nothing about you.
+              </div>
+            </div>
           </div>
-          <div style="flex: 1; padding: 0.8em; border-radius: 10px; background: rgba(255,255,255,0.03);">
-            <div style="font-size: 1.3em; margin-bottom: 0.3em;">🔄</div>
-            <div class="dim" style="font-weight: bold; margin-bottom: 0.3em;">Conversation context</div>
-            <div class="dim">20 messages in, you mentioned you're vegetarian</div>
-            <div style="margin-top: 0.4em;">Better — but resets next session.</div>
+
+          <!-- Chat 2: Mid-conversation -->
+          <div style="flex: 1; display: flex; flex-direction: column;">
+            <div class="dim" style="font-weight: bold; text-align: center; margin-bottom: 0.4em; font-size: 1.1em;">Mid-conversation</div>
+            <div style="flex: 1; border-radius: 12px; background: rgba(255,255,255,0.03); padding: 0.7em; display: flex; flex-direction: column;">
+              <!-- Earlier messages faded -->
+              <div style="opacity: 0.4; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 0.4em; margin-bottom: 0.4em; font-size: 0.9em;">
+                <div style="background: rgba(88,166,255,0.15); padding: 0.3em 0.6em; border-radius: 8px; margin-left: 2em; margin-bottom: 0.3em;">
+                  ...yeah I'll try that recipe,<br>I've been vegetarian for years
+                </div>
+                <div style="text-align: center; color: rgba(255,255,255,0.3);">┈ 15 messages later ┈</div>
+              </div>
+              <!-- Current exchange -->
+              <div style="margin-top: auto;">
+                <div style="background: rgba(88,166,255,0.2); padding: 0.4em 0.7em; border-radius: 10px 10px 2px 10px; margin-left: 2em; margin-bottom: 0.4em;">
+                  What should I have for dinner?
+                </div>
+                <div style="background: rgba(255,255,255,0.06); padding: 0.4em 0.7em; border-radius: 10px 10px 10px 2px; margin-right: 2em;">
+                  Since you're vegetarian, how about a Thai basil tofu stir fry or a chickpea curry?
+                </div>
+                <div class="dim" style="text-align: center; margin-top: 0.6em; font-size: 0.9em;">
+                  Better — it remembered from earlier.<br><span class="orange">But resets next session.</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="flex: 1; padding: 0.8em; border-radius: 10px; background: rgba(255,255,255,0.03);">
-            <div style="font-size: 1.3em; margin-bottom: 0.3em;">📌</div>
-            <div class="dim" style="font-weight: bold; margin-bottom: 0.3em;">Light personalization</div>
-            <div class="dim">ChatGPT memory, Claude projects</div>
-            <div style="margin-top: 0.4em;">A few bullet points persist. Shallow, not yours to control.</div>
+
+          <!-- Chat 3: OpenClaw -->
+          <div style="flex: 1; display: flex; flex-direction: column;">
+            <div class="blue" style="font-weight: bold; text-align: center; margin-bottom: 0.4em; font-size: 1.1em;">🦞 OpenClaw</div>
+            <div style="flex: 1; border-radius: 12px; background: rgba(88,166,255,0.05); border: 1px solid rgba(88,166,255,0.2); padding: 0.7em; display: flex; flex-direction: column;">
+              <!-- Loaded context block -->
+              <div style="background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.15); border-radius: 8px; padding: 0.5em; margin-bottom: 0.5em; font-size: 0.9em;">
+                <div class="blue" style="font-weight: bold; margin-bottom: 0.2em;">📂 Loaded before you type anything</div>
+                <div class="dim">
+                  SOUL.md · USER.md · AGENTS.md · TOOLS.md<br>
+                  <span style="opacity: 0.7;">"Jack is vegetarian, lives in Sydney,<br>wife Aom is Thai, loves spicy food..."</span>
+                </div>
+                <div class="blue" style="margin-top: 0.3em;">
+                  🔍 memory_search → <span class="dim">thai-recipes.md</span>
+                </div>
+              </div>
+              <!-- Chat bubbles -->
+              <div style="margin-top: auto;">
+                <div style="background: rgba(88,166,255,0.2); padding: 0.4em 0.7em; border-radius: 10px 10px 2px 10px; margin-left: 2em; margin-bottom: 0.4em;">
+                  What should I have for dinner?
+                </div>
+                <div style="background: rgba(255,255,255,0.06); padding: 0.4em 0.7em; border-radius: 10px 10px 10px 2px; margin-right: 2em;">
+                  It's 28° in Sydney tonight — perfect for that som tum recipe Aom showed you last week 🌶️
+                </div>
+                <div class="dim" style="text-align: center; margin-top: 0.6em; font-size: 0.9em;">
+                  Deeply personal from message one.<br><span class="green">Persists. You control all of it.</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="flex: 1; padding: 0.8em; border-radius: 10px; background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.3);">
-            <div style="font-size: 1.3em; margin-bottom: 0.3em;">🦞</div>
-            <div class="blue" style="font-weight: bold; margin-bottom: 0.3em;">Full context injection</div>
-            <div class="dim">SOUL.md, USER.md, AGENTS.md, tools, history...</div>
-            <div style="margin-top: 0.4em;">Deep, persistent, and <em>you</em> control all of it.</div>
-          </div>
+
         </div>
-        <p style="font-size: 0.6em; margin-top: 1.2em;">
-          The model isn't smarter — it just <span class="highlight">knows more about you</span> before it starts thinking.<br>
-          <span class="dim">Same engine, different onboarding docs → completely different employee.</span>
+
+        <p style="font-size: 0.5em; margin-top: 0.5em;">
+          Same model, same mechanisms. <span class="highlight">The difference is what it knows before it starts thinking</span> — and how much of that <em>you</em> control.
         </p>
       </section>
 
