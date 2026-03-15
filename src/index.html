@@ -709,37 +709,39 @@
       <section>
         <h2>Getting Started</h2>
         <p class="subtitle">~5 minutes to your first conversation</p>
-        <div class="steps">
+
+        <div style="margin-top: 1em; text-align: center;">
+          <code style="background: rgba(255,255,255,0.08); padding: 0.4em 0.8em; border-radius: 8px; font-size: 0.8em;">curl -fsSL https://openclaw.ai/install.sh | bash</code>
+          <p class="dim" style="font-size: 0.5em; margin-top: 0.3em;">Mac, Linux, WSL2, Raspberry Pi — handles everything.</p>
+        </div>
+
+        <div class="steps" style="margin-top: 1em;">
           <div class="step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <strong>Install</strong><br>
-              <code>npm install -g openclaw</code><br>
-              <span class="dim">Node.js 20+. Mac, Linux, WSL2, Raspberry Pi.</span>
+              <strong>Get a machine</strong><br>
+              <span class="dim">A VPS, spare laptop, Mac Mini, Raspberry Pi — anything that stays on.</span>
             </div>
           </div>
           <div class="step">
             <div class="step-num">2</div>
             <div class="step-content">
-              <strong>Setup</strong><br>
-              <code>openclaw setup</code><br>
-              <span class="dim">Creates config + workspace. Add your API key (Anthropic, OpenAI, etc).</span>
+              <strong>Run the install script</strong><br>
+              <span class="dim">It installs OpenClaw, walks you through setup, and adds your API key.</span>
             </div>
           </div>
           <div class="step">
             <div class="step-num">3</div>
             <div class="step-content">
               <strong>Connect a channel</strong><br>
-              <code>openclaw channels login</code><br>
-              <span class="dim">Scan QR for WhatsApp, paste token for Telegram/Discord.</span>
+              <span class="dim">Telegram is the fastest. Discord for power users. WhatsApp via QR scan.</span>
             </div>
           </div>
           <div class="step">
             <div class="step-num">4</div>
             <div class="step-content">
-              <strong>Start the Gateway</strong><br>
-              <code>openclaw gateway</code><br>
-              <span class="dim">Your agent is now live. Send it a message! 🦞</span>
+              <strong>Say hello 🦞</strong><br>
+              <span class="dim">Your agent is live. Start chatting and see what happens.</span>
             </div>
           </div>
         </div>
