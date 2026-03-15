@@ -166,14 +166,17 @@
 
 /* QR code corner badge */
 .reveal .slides section::after {
-  content: '';
+  content: 'View Slides';
   position: absolute;
-  bottom: 12px;
+  top: 12px;
   right: 12px;
-  width: 60px;
-  height: 60px;
-  background: url('./qr-slides.svg') no-repeat center/contain;
-  opacity: 0.35;
+  width: 90px;
+  padding-top: 90px;
+  background: url('./qr-slides.svg') no-repeat center top/90px 90px;
+  font-size: 0.35em;
+  color: #8b949e;
+  text-align: center;
+  opacity: 0.5;
   pointer-events: none;
   z-index: 10;
 }
@@ -181,6 +184,18 @@
 .reveal .slides section:first-child::after,
 .reveal .slides section:last-child::after {
   display: none;
+}
+
+/* Mobile: hide QR badge, scale better */
+@media (max-width: 768px) {
+  .reveal .slides section::after {
+    width: 60px;
+    padding-top: 60px;
+    background-size: 60px 60px;
+    font-size: 0.25em;
+    top: 6px;
+    right: 6px;
+  }
 }
 
 /* Security grid */
