@@ -13,9 +13,9 @@ mkdirSync(distDir, { recursive: true });
 // Copy reveal.js dist files
 const revealDist = "./node_modules/reveal.js/dist";
 mkdirSync(join(distDir, "reveal"), { recursive: true });
+cpSync(join(revealDist, "reset.css"), join(distDir, "reveal/reset.css"));
 cpSync(join(revealDist, "reveal.css"), join(distDir, "reveal/reveal.css"));
-cpSync(join(revealDist, "reveal.esm.js"), join(distDir, "reveal/reveal.esm.js"));
-cpSync(join(revealDist, "reveal.esm.js.map"), join(distDir, "reveal/reveal.esm.js.map"));
+cpSync(join(revealDist, "reveal.mjs"), join(distDir, "reveal/reveal.mjs"));
 cpSync(join(revealDist, "theme"), join(distDir, "reveal/theme"), { recursive: true });
 
 // Copy custom styles
