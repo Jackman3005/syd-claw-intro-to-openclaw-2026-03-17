@@ -329,53 +329,81 @@
         </div>
       </section>
 
-      <!-- SLIDE 9: Security -->
+      <!-- SLIDE 11: The Risks — What Could Go Wrong -->
       <section>
-        <h2>Security Considerations</h2>
-        <p class="subtitle">It has real access — treat it accordingly</p>
-        <div class="security-grid">
-          <div class="security-item">
-            <span class="security-icon">🔒</span>
-            <div>
-              <strong>Local-first</strong><br>
-              <span class="dim">Your data stays on your machine. Only external calls are to your LLM provider.</span>
-            </div>
+        <h2>What Could Go Wrong</h2>
+        <p class="subtitle">Honest risks — you should know these before you start</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; margin-top: 0.8em; font-size: 0.65em; text-align: left;">
+
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💻 It runs shell commands on your machine</div>
+            <div class="dim">The agent has real access to your filesystem. A bad prompt, a hallucination, or a misunderstood instruction can delete files, install things, or run destructive commands.</div>
           </div>
-          <div class="security-item">
-            <span class="security-icon">👤</span>
-            <div>
-              <strong>allowFrom</strong><br>
-              <span class="dim">Restrict who can talk to your agent. Don't run open-to-the-world.</span>
-            </div>
+
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">📨 It can send messages as you</div>
+            <div class="dim">Connected to your WhatsApp or Discord? It can send messages to your contacts. A confused agent could message the wrong person or say the wrong thing.</div>
           </div>
-          <div class="security-item">
-            <span class="security-icon">🛡️</span>
-            <div>
-              <strong>Tool policies</strong><br>
-              <span class="dim">Control what commands the agent can run. Sandbox mode available.</span>
-            </div>
+
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🧠 Your context is its context</div>
+            <div class="dim">Workspace files, memory, conversation history — all sent to the LLM provider with every request. Personal data leaves your machine in prompts.</div>
           </div>
-          <div class="security-item">
-            <span class="security-icon">🔑</span>
-            <div>
-              <strong>Gateway auth</strong><br>
-              <span class="dim">Token-protected WebSocket. Especially important for remote access.</span>
-            </div>
+
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💉 Prompt injection is real</div>
+            <div class="dim">Someone sends your agent a crafty message, and it follows <em>their</em> instructions instead of yours. Group chats and public channels are the biggest risk surface.</div>
           </div>
-          <div class="security-item">
-            <span class="security-icon">📁</span>
-            <div>
-              <strong>Workspace = memory</strong><br>
-              <span class="dim">Treat workspace files like personal data — because they are.</span>
-            </div>
+
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💸 Token costs add up</div>
+            <div class="dim">Always-on means always-spending. Heartbeats, cron jobs, long conversations — each one is an API call. It's easy to burn through credits without realizing.</div>
           </div>
-          <div class="security-item">
-            <span class="security-icon">🐢</span>
-            <div>
-              <strong>Start conservative</strong><br>
-              <span class="dim">Lock it down first, open up as you build trust with the agent.</span>
-            </div>
+
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🤷 It's a large, fast-moving codebase</div>
+            <div class="dim">OpenClaw is 430K+ lines and updating frequently. You're trusting a lot of code you haven't read. Breaking changes happen.</div>
           </div>
+
+        </div>
+      </section>
+
+      <!-- SLIDE 12: How You Stay Safe -->
+      <section>
+        <h2>How You Stay Safe</h2>
+        <p class="subtitle">Start locked down, open up as you build trust</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; margin-top: 0.8em; font-size: 0.65em; text-align: left;">
+
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">👤 allowFrom</div>
+            <div class="dim">Whitelist who can talk to your agent. Never run open-to-the-world. Start with just your own number.</div>
+          </div>
+
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🛡️ Tool policies & sandbox</div>
+            <div class="dim">Control what the agent can execute. Sandbox mode restricts filesystem access. Allowlists limit which commands are permitted.</div>
+          </div>
+
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🔑 Gateway auth token</div>
+            <div class="dim">Protect your WebSocket endpoint. Essential if you expose the gateway remotely via Tailscale or SSH tunnel.</div>
+          </div>
+
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🏠 Dedicated machine</div>
+            <div class="dim">Don't run it on your daily driver. Use a VM, VPS, old laptop, or Raspberry Pi. Isolate the blast radius.</div>
+          </div>
+
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">📱 Separate phone number</div>
+            <div class="dim">For WhatsApp: use a dedicated SIM. Don't link your personal WhatsApp — every message becomes agent input.</div>
+          </div>
+
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🐢 The trust gradient</div>
+            <div class="dim">Start with heartbeats off, strict allowlists, and read-only. Gradually give more access as you understand the agent's behavior.</div>
+          </div>
+
         </div>
       </section>
 
