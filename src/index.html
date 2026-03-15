@@ -26,76 +26,92 @@
         <div style="position: relative; width: 100%; height: 100%; min-height: 640px;">
 
           <!-- Title -->
-          <div style="text-align: center; margin-bottom: 0.3em;">
-            <h2 style="margin-bottom: 0.1em;">The Hype Is Real</h2>
+          <div style="text-align: center;">
+            <h2 style="margin-bottom: 0;">The Hype Is Real</h2>
           </div>
 
-          <!-- Star chart SVG -->
-          <div style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 700px; height: 280px; opacity: 0.12;">
-            <svg viewBox="0 0 700 280" style="width: 100%; height: 100%;">
-              <!-- Grid lines -->
-              <line x1="60" y1="240" x2="680" y2="240" stroke="#8b949e" stroke-width="0.5"/>
-              <line x1="60" y1="180" x2="680" y2="180" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
-              <line x1="60" y1="120" x2="680" y2="120" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
-              <line x1="60" y1="60" x2="680" y2="60" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
-              <!-- Y-axis labels -->
-              <text x="50" y="244" fill="#8b949e" font-size="11" text-anchor="end">0</text>
-              <text x="50" y="184" fill="#8b949e" font-size="11" text-anchor="end">100k</text>
-              <text x="50" y="124" fill="#8b949e" font-size="11" text-anchor="end">200k</text>
-              <text x="50" y="64" fill="#8b949e" font-size="11" text-anchor="end">310k</text>
-              <!-- X-axis labels -->
-              <text x="80" y="260" fill="#8b949e" font-size="10">Nov 25</text>
-              <text x="220" y="260" fill="#8b949e" font-size="10">Jan 26</text>
-              <text x="420" y="260" fill="#8b949e" font-size="10">Feb 26</text>
-              <text x="620" y="260" fill="#8b949e" font-size="10">Mar 26</text>
-              <!-- The curve: slow start, then vertical -->
-              <path d="M 80 240 C 120 239, 180 238, 220 236 C 260 232, 300 220, 360 180 C 400 150, 450 100, 520 60 C 560 42, 620 30, 670 22" 
-                    fill="none" stroke="#58a6ff" stroke-width="3" stroke-linecap="round"/>
-              <!-- Glow -->
-              <path d="M 80 240 C 120 239, 180 238, 220 236 C 260 232, 300 220, 360 180 C 400 150, 450 100, 520 60 C 560 42, 620 30, 670 22" 
-                    fill="none" stroke="#58a6ff" stroke-width="8" stroke-linecap="round" opacity="0.15"/>
-            </svg>
+          <!-- Star chart + stats row -->
+          <div style="display: flex; align-items: center; gap: 1.5em; margin-top: 0.3em; padding: 0 1em;">
+            <!-- Chart -->
+            <div style="flex: 1;">
+              <svg viewBox="0 0 520 200" style="width: 100%; height: auto;">
+                <line x1="45" y1="170" x2="500" y2="170" stroke="#8b949e" stroke-width="0.5"/>
+                <line x1="45" y1="125" x2="500" y2="125" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
+                <line x1="45" y1="80" x2="500" y2="80" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
+                <line x1="45" y1="35" x2="500" y2="35" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
+                <text x="38" y="174" fill="#8b949e" font-size="9" text-anchor="end">0</text>
+                <text x="38" y="129" fill="#8b949e" font-size="9" text-anchor="end">100k</text>
+                <text x="38" y="84" fill="#8b949e" font-size="9" text-anchor="end">200k</text>
+                <text x="38" y="39" fill="#8b949e" font-size="9" text-anchor="end">310k</text>
+                <text x="60" y="188" fill="#8b949e" font-size="9">Nov 25</text>
+                <text x="180" y="188" fill="#8b949e" font-size="9">Jan 26</text>
+                <text x="330" y="188" fill="#8b949e" font-size="9">Feb 26</text>
+                <text x="460" y="188" fill="#8b949e" font-size="9">Mar 26</text>
+                <!-- Area fill -->
+                <path d="M 60 170 C 100 169, 150 168, 180 166 C 220 162, 260 150, 320 120 C 360 98, 400 65, 440 40 C 460 30, 480 22, 495 18 L 495 170 Z"
+                      fill="url(#starGradient)" opacity="0.3"/>
+                <!-- Line -->
+                <path d="M 60 170 C 100 169, 150 168, 180 166 C 220 162, 260 150, 320 120 C 360 98, 400 65, 440 40 C 460 30, 480 22, 495 18"
+                      fill="none" stroke="#58a6ff" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Glow -->
+                <path d="M 60 170 C 100 169, 150 168, 180 166 C 220 162, 260 150, 320 120 C 360 98, 400 65, 440 40 C 460 30, 480 22, 495 18"
+                      fill="none" stroke="#58a6ff" stroke-width="6" stroke-linecap="round" opacity="0.15"/>
+                <!-- Dot at end -->
+                <circle cx="495" cy="18" r="4" fill="#58a6ff"/>
+                <circle cx="495" cy="18" r="8" fill="#58a6ff" opacity="0.2"/>
+                <defs>
+                  <linearGradient id="starGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.4"/>
+                    <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <!-- Stats -->
+            <div style="flex-shrink: 0; text-align: right; padding-right: 0.5em;">
+              <div style="font-size: 1.8em; font-weight: bold; color: #58a6ff; line-height: 1.1;">310k stars</div>
+              <div class="dim" style="font-size: 0.6em; margin-top: 0.2em;">in ~4 months</div>
+              <div style="font-size: 0.55em; margin-top: 0.3em; color: #ffa657; font-weight: bold;">#9 GitHub repo of all time</div>
+              <div class="dim" style="font-size: 0.5em;">Surpassed React in 60 days</div>
+            </div>
           </div>
 
-          <!-- Big star count -->
-          <div style="position: absolute; top: 55px; right: 40px; text-align: right;">
-            <div style="font-size: 2.8em; font-weight: bold; color: #58a6ff; line-height: 1;">310k ⭐</div>
-            <div class="dim" style="font-size: 0.55em;">GitHub stars in ~4 months</div>
-            <div class="dim" style="font-size: 0.45em;">Surpassed React. #9 all-time.</div>
-          </div>
+          <!-- Scattered quote bubbles below the chart -->
+          <div style="position: relative; height: 300px; margin-top: 0.3em;">
 
-          <!-- Scattered quote bubbles -->
-          <div style="position: absolute; top: 85px; left: 30px; transform: rotate(-2deg); background: rgba(126,231,135,0.1); border: 1px solid rgba(126,231,135,0.25); border-radius: 12px; padding: 0.4em 0.7em; font-size: 0.48em; max-width: 280px; font-style: italic;">
-            "Cleared 10,000 emails from my inbox on day one."
-          </div>
+            <div style="position: absolute; top: 0; left: 20px; transform: rotate(-2deg); background: rgba(126,231,135,0.1); border: 1px solid rgba(126,231,135,0.25); border-radius: 12px; padding: 0.35em 0.65em; font-size: 0.46em; max-width: 270px; font-style: italic;">
+              "Cleared 10,000 emails from my inbox on day one."
+            </div>
 
-          <div style="position: absolute; top: 190px; left: 15px; transform: rotate(1.5deg); background: rgba(255,166,87,0.1); border: 1px solid rgba(255,166,87,0.25); border-radius: 12px; padding: 0.4em 0.7em; font-size: 0.48em; max-width: 310px; font-style: italic;">
-            "Rebuilt my entire site via Telegram while watching Netflix in bed. Never opened my laptop."
-          </div>
+            <div style="position: absolute; top: 5px; right: 20px; transform: rotate(1.5deg); background: rgba(255,166,87,0.1); border: 1px solid rgba(255,166,87,0.25); border-radius: 12px; padding: 0.35em 0.65em; font-size: 0.46em; max-width: 300px; font-style: italic;">
+              "Rebuilt my entire site via Telegram while watching Netflix. Never opened my laptop."
+            </div>
 
-          <div style="position: absolute; top: 155px; right: 15px; transform: rotate(1deg); background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.25); border-radius: 12px; padding: 0.4em 0.7em; font-size: 0.44em; max-width: 320px; font-style: italic;">
-            "It reviewed the logs, identified root cause, fixed configs, redeployed, confirmed. All over voice while walking the dog."
-          </div>
+            <div style="position: absolute; top: 75px; left: 50px; transform: rotate(1deg); background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.25); border-radius: 12px; padding: 0.35em 0.65em; font-size: 0.43em; max-width: 310px; font-style: italic;">
+              "Reviewed logs, identified root cause, fixed configs, redeployed. All over voice while walking the dog."
+            </div>
 
-          <div style="position: absolute; top: 310px; left: 60px; transform: rotate(-1deg); background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2); border-radius: 12px; padding: 0.4em 0.7em; font-size: 0.48em; max-width: 300px; font-style: italic;">
-            "I had a holy shit, the world is not the same anymore moment."
-          </div>
+            <div style="position: absolute; top: 70px; right: 40px; transform: rotate(-1.5deg); background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2); border-radius: 12px; padding: 0.35em 0.65em; font-size: 0.46em; max-width: 260px; font-style: italic;">
+              "I had a holy shit, the world is not the same anymore moment."
+            </div>
 
-          <div style="position: absolute; top: 290px; right: 30px; transform: rotate(-1.5deg); background: rgba(126,231,135,0.1); border: 1px solid rgba(126,231,135,0.25); border-radius: 12px; padding: 0.4em 0.7em; font-size: 0.48em; max-width: 280px; font-style: italic;">
-            "Built a full weekly meal planning system. Shopping lists sorted by store and aisle."
-          </div>
+            <div style="position: absolute; top: 145px; left: 15px; transform: rotate(-0.5deg); background: rgba(126,231,135,0.1); border: 1px solid rgba(126,231,135,0.25); border-radius: 12px; padding: 0.35em 0.65em; font-size: 0.46em; max-width: 280px; font-style: italic;">
+              "Built a weekly meal planning system. Shopping lists sorted by store and aisle."
+            </div>
 
-          <div style="position: absolute; top: 400px; left: 180px; transform: rotate(0.5deg); background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.25); border-radius: 12px; padding: 0.4em 0.7em; font-size: 0.48em; max-width: 300px; font-style: italic;">
-            "Morning brief: weather, calendar, health stats, trending topics, a quote from my books."
-          </div>
+            <div style="position: absolute; top: 150px; right: 10px; transform: rotate(2deg); background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.25); border-radius: 12px; padding: 0.35em 0.65em; font-size: 0.46em; max-width: 290px; font-style: italic;">
+              "Morning brief: weather, calendar, health stats, trending topics, a quote from my books."
+            </div>
 
-          <div style="position: absolute; top: 415px; right: 50px; transform: rotate(2deg); background: rgba(255,166,87,0.1); border: 1px solid rgba(255,166,87,0.25); border-radius: 12px; padding: 0.4em 0.7em; font-size: 0.44em; max-width: 260px; font-style: italic;">
-            "All this was done over voice when walking the f***ing dog..."
+            <div style="position: absolute; top: 218px; left: 160px; transform: rotate(1deg); background: rgba(255,166,87,0.1); border: 1px solid rgba(255,166,87,0.25); border-radius: 12px; padding: 0.35em 0.65em; font-size: 0.43em; max-width: 340px; font-style: italic;">
+              "All this was done over voice when walking the f***ing dog..."
+            </div>
+
           </div>
 
           <!-- Bottom text -->
-          <div style="position: absolute; bottom: 15px; left: 0; right: 0; text-align: center;">
-            <p class="dim" style="font-size: 0.5em; margin: 0;">
+          <div style="position: absolute; bottom: 12px; left: 0; right: 0; text-align: center;">
+            <p class="dim" style="font-size: 0.48em; margin: 0;">
               Real quotes from the community. So... let's talk about what this actually is.
             </p>
           </div>
