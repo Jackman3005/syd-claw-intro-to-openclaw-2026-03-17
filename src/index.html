@@ -140,7 +140,6 @@
       <section>
         <h2>Context Is Everything</h2>
         <p class="subtitle">The model is the same. The context makes it yours.</p>
-
         <div style="display: flex; gap: 0.8em; margin-top: 1.2em; font-size: 0.65em; text-align: left;">
           <div style="flex: 1; padding: 0.8em; border-radius: 10px; background: rgba(255,255,255,0.03);">
             <div style="font-size: 1.3em; margin-bottom: 0.3em;">💬</div>
@@ -167,14 +166,69 @@
             <div style="margin-top: 0.4em;">Deep, persistent, and <em>you</em> control all of it.</div>
           </div>
         </div>
-
         <p style="font-size: 0.6em; margin-top: 1.2em;">
           The model isn't smarter — it just <span class="highlight">knows more about you</span> before it starts thinking.<br>
           <span class="dim">Same engine, different onboarding docs → completely different employee.</span>
         </p>
       </section>
 
-      <!-- SLIDE 7: vs Coding Agents -->
+      <!-- SLIDE 7: Where does your data go? -->
+      <section>
+        <h2>Where Does Your Data Go?</h2>
+        <p class="subtitle">Know the boundaries before you share your secrets</p>
+
+        <div style="display: flex; justify-content: center; align-items: start; gap: 1em; margin-top: 1em; font-size: 0.6em;">
+
+          <!-- Your Machine -->
+          <div style="min-width: 180px; padding: 0.8em; border-radius: 12px; background: rgba(126,231,135,0.1); border: 1px solid rgba(126,231,135,0.3); text-align: center;">
+            <div style="font-size: 1.5em;">🏠</div>
+            <div class="green" style="font-weight: bold; margin: 0.3em 0;">Your Machine</div>
+            <div class="dim" style="font-size: 0.9em; text-align: left;">
+              Workspace files<br>
+              Memory & history<br>
+              Config & secrets<br>
+              Session transcripts
+            </div>
+            <div class="green" style="margin-top: 0.5em; font-size: 0.85em;">✅ You control this</div>
+          </div>
+
+          <!-- Arrows out -->
+          <div style="display: flex; flex-direction: column; gap: 1.5em; padding-top: 1em;">
+            <div style="text-align: center;">
+              <div class="dim">→ prompts →</div>
+            </div>
+            <div style="text-align: center;">
+              <div class="dim">→ messages →</div>
+            </div>
+            <div style="text-align: center;">
+              <div class="dim">→ fetches →</div>
+            </div>
+          </div>
+
+          <!-- External destinations -->
+          <div style="display: flex; flex-direction: column; gap: 0.6em;">
+            <div style="padding: 0.6em 0.8em; border-radius: 10px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.2);">
+              <div class="orange" style="font-weight: bold;">🤖 LLM Provider</div>
+              <div class="dim" style="font-size: 0.9em;">Anthropic, OpenAI, Google...<br>Sees everything in your prompt:<br>workspace files, memory, conversation</div>
+            </div>
+            <div style="padding: 0.6em 0.8em; border-radius: 10px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.2);">
+              <div class="orange" style="font-weight: bold;">💬 Connected Services</div>
+              <div class="dim" style="font-size: 0.9em;">Discord, WhatsApp, Calendar, Email...<br>Can send messages, create events,<br>post data on your behalf</div>
+            </div>
+            <div style="padding: 0.6em 0.8em; border-radius: 10px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.2);">
+              <div class="orange" style="font-weight: bold;">🌐 The Internet</div>
+              <div class="dim" style="font-size: 0.9em;">Web search, URL fetching, APIs...<br>Agent can reach out to any<br>public endpoint</div>
+            </div>
+          </div>
+
+        </div>
+
+        <p style="font-size: 0.55em; margin-top: 0.8em;">
+          <span class="highlight">Self-hosted LLM?</span> Prompts stay on your network. <span class="dim">Remote LLM? Your context leaves your machine with every request.</span>
+        </p>
+      </section>
+
+      <!-- SLIDE 8: OpenClaw vs Coding Agents -->
       <section>
         <h2>OpenClaw vs Coding Agents</h2>
         <div class="compare-grid">
@@ -204,7 +258,7 @@
         <p class="dim" style="font-size:0.6em; margin-top:1em;">They're complementary, not competing. You can run Claude Code <em>as a sub-agent</em> inside OpenClaw.</p>
       </section>
 
-      <!-- SLIDE 7: What can you do with it? -->
+      <!-- SLIDE 9: What can you do with it? -->
       <section>
         <h2>What Can You Do With It?</h2>
         <div class="cap-grid">
@@ -241,13 +295,11 @@
         </div>
       </section>
 
-      <!-- SLIDE 9: What I'm actually doing with it -->
+      <!-- SLIDE 10: What I'm actually doing with it -->
       <section>
         <h2>What I'm Doing With It</h2>
         <p class="subtitle">Real examples, not hypotheticals</p>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em; margin-top: 0.5em; font-size: 0.58em; text-align: left;">
-
-          <!-- Arc Raiders — with screenshot -->
           <div style="grid-column: 1 / 3; display: flex; gap: 1em; padding: 0.6em; border-radius: 10px; background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.2); align-items: center;">
             <div style="flex: 1;">
               <div class="blue" style="font-weight: bold; margin-bottom: 0.2em;">🎮 Game Database</div>
@@ -255,41 +307,94 @@
             </div>
             <img src="./arc-raiders.png" style="width: 260px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);" alt="Arc Raiders Database">
           </div>
-
           <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
             <div style="font-weight: bold; margin-bottom: 0.15em;">👶 Gender Reveal Site</div>
             <div class="dim">Live voting, AI-generated images, photo gallery, bilingual — built in one session.</div>
           </div>
-
           <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
             <div style="font-weight: bold; margin-bottom: 0.15em;">📅 Calendar & Reminders</div>
             <div class="dim">Proactively checks my calendar and sends alerts to Discord.</div>
           </div>
-
           <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
             <div style="font-weight: bold; margin-bottom: 0.15em;">📊 Daily Status Reports</div>
             <div class="dim">Automated summaries posted to Discord channels every day.</div>
           </div>
-
           <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
             <div style="font-weight: bold; margin-bottom: 0.15em;">🤖 Bot-to-Bot Collaboration</div>
             <div class="dim">My agent and a friend's agent talk on Discord, collaborating on designs.</div>
           </div>
-
           <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03); opacity: 0.85;">
             <div style="font-weight: bold; margin-bottom: 0.15em;">🎤 This Slide Deck</div>
             <div class="dim">Built by chatting with my agent in a Discord thread. It wrote the code, pushed to GitHub.</div>
           </div>
-
           <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.15);">
             <div class="green" style="font-weight: bold; margin-bottom: 0.15em;">🧠 Memory System</div>
             <div class="dim">Observes, reflects, consolidates. <em>More in my next talk →</em></div>
           </div>
-
         </div>
       </section>
 
-      <!-- SLIDE 10: Getting Started -->
+      <!-- SLIDE 11: What Could Go Wrong -->
+      <section>
+        <h2>What Could Go Wrong</h2>
+        <p class="subtitle">Honest risks — you should know these before you start</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; margin-top: 0.8em; font-size: 0.65em; text-align: left;">
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💻 It runs commands on your machine</div>
+            <div class="dim">The agent has real access to your filesystem. A hallucination or misunderstood instruction can delete files, install things, or run destructive commands.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🔌 It can act on your integrations</div>
+            <div class="dim">Whatever access you give it — messaging, calendar, email — it can use. A confused agent might post to the wrong channel, send an email you didn't intend, or create events.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💉 Prompt injection is real</div>
+            <div class="dim">Someone sends your agent a crafty message, and it follows <em>their</em> instructions instead of yours. Group chats and public channels are the biggest risk surface.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💸 Token costs add up</div>
+            <div class="dim">Always-on means always-spending. Heartbeats, cron jobs, long conversations — each one is an API call. Easy to burn through credits without realizing.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🤷 Large, fast-moving codebase</div>
+            <div class="dim">430K+ lines, updating frequently. You're trusting a lot of code you haven't read. Breaking changes happen. Audit what you can.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🔓 WhatsApp = your identity</div>
+            <div class="dim">On WhatsApp, the agent IS your phone number. Messages appear to come from you. Discord/Telegram use a separate bot identity — much safer.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: How You Stay Safe -->
+      <section>
+        <h2>How You Stay Safe</h2>
+        <p class="subtitle">Start locked down, open up as you build trust</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; margin-top: 0.8em; font-size: 0.65em; text-align: left;">
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">👤 allowFrom</div>
+            <div class="dim">Whitelist who can talk to your agent. Never run open-to-the-world. Start with just your own number.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🛡️ Tool policies & sandbox</div>
+            <div class="dim">Control what the agent can execute. Sandbox mode restricts filesystem access. Allowlists limit which commands are permitted.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🔑 Gateway auth token</div>
+            <div class="dim">Protect your WebSocket endpoint. Essential if you expose the gateway remotely via Tailscale or SSH tunnel.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">📱 Separate phone number</div>
+            <div class="dim">For WhatsApp: use a dedicated SIM. Don't link your personal WhatsApp — every message becomes agent input.</div>
+          </div>
+          <div style="grid-column: 1 / 3; padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2); text-align: center;">
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🐢 The Trust Gradient</div>
+            <div class="dim">Start with heartbeats off, strict allowlists, and read-only tools. Gradually give more access as you understand the agent's behavior. Think of it like a new employee — more responsibility over time.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: Getting Started -->
       <section>
         <h2>Getting Started</h2>
         <p class="subtitle">~5 minutes to your first conversation</p>
@@ -329,85 +434,55 @@
         </div>
       </section>
 
-      <!-- SLIDE 11: The Risks — What Could Go Wrong -->
+      <!-- SLIDE 14: Where should I run this? -->
       <section>
-        <h2>What Could Go Wrong</h2>
-        <p class="subtitle">Honest risks — you should know these before you start</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; margin-top: 0.8em; font-size: 0.65em; text-align: left;">
+        <h2>Where Should I Run This?</h2>
+        <p class="subtitle">Pick your setup based on your comfort level</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1em; margin-top: 1em; font-size: 0.62em; text-align: left;">
 
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
-            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💻 It runs shell commands on your machine</div>
-            <div class="dim">The agent has real access to your filesystem. A bad prompt, a hallucination, or a misunderstood instruction can delete files, install things, or run destructive commands.</div>
+          <div style="padding: 0.8em; border-radius: 12px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.25);">
+            <div style="font-size: 1.3em; margin-bottom: 0.3em;">🖥️</div>
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">Mac Mini / Dedicated Machine</div>
+            <div class="dim" style="margin-bottom: 0.4em;">The community favorite. Always on, low power, can run local models too.</div>
+            <div style="font-size: 0.9em;">
+              ✅ Full control<br>
+              ✅ Local LLM option<br>
+              ✅ No monthly cost<br>
+              <span class="dim">⚠️ Need to maintain it yourself</span>
+            </div>
           </div>
 
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
-            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">📨 It can send messages as you</div>
-            <div class="dim">Connected to your WhatsApp or Discord? It can send messages to your contacts. A confused agent could message the wrong person or say the wrong thing.</div>
+          <div style="padding: 0.8em; border-radius: 12px; background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.25);">
+            <div style="font-size: 1.3em; margin-bottom: 0.3em;">☁️</div>
+            <div class="blue" style="font-weight: bold; margin-bottom: 0.3em;">VPS / Cloud VM</div>
+            <div class="dim" style="margin-bottom: 0.4em;">Cheap Linux VM ($5-10/mo). Always on, nothing to maintain physically.</div>
+            <div style="font-size: 0.9em;">
+              ✅ Always available<br>
+              ✅ Easy to set up<br>
+              ✅ Remote by default<br>
+              <span class="dim">⚠️ Remote models only (usually)</span>
+            </div>
           </div>
 
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
-            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🧠 Your context is its context</div>
-            <div class="dim">Workspace files, memory, conversation history — all sent to the LLM provider with every request. Personal data leaves your machine in prompts.</div>
-          </div>
-
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
-            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💉 Prompt injection is real</div>
-            <div class="dim">Someone sends your agent a crafty message, and it follows <em>their</em> instructions instead of yours. Group chats and public channels are the biggest risk surface.</div>
-          </div>
-
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
-            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💸 Token costs add up</div>
-            <div class="dim">Always-on means always-spending. Heartbeats, cron jobs, long conversations — each one is an API call. It's easy to burn through credits without realizing.</div>
-          </div>
-
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
-            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🤷 It's a large, fast-moving codebase</div>
-            <div class="dim">OpenClaw is 430K+ lines and updating frequently. You're trusting a lot of code you haven't read. Breaking changes happen.</div>
+          <div style="padding: 0.8em; border-radius: 12px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.25);">
+            <div style="font-size: 1.3em; margin-bottom: 0.3em;">⚠️</div>
+            <div class="orange" style="font-weight: bold; margin-bottom: 0.3em;">Your Daily Driver</div>
+            <div class="dim" style="margin-bottom: 0.4em;">Your laptop or desktop. Fine for experimenting, not great long-term.</div>
+            <div style="font-size: 0.9em;">
+              ✅ Nothing extra to buy<br>
+              ✅ Good for trying it out<br>
+              <span class="red">⚠️ Agent has access to everything</span><br>
+              <span class="red">⚠️ Stops when you close the lid</span>
+            </div>
           </div>
 
         </div>
+        <p class="dim" style="font-size: 0.55em; margin-top: 0.8em;">
+          Raspberry Pi also works great for a low-cost always-on setup. Isolate the agent from your personal files.
+        </p>
       </section>
 
-      <!-- SLIDE 12: How You Stay Safe -->
-      <section>
-        <h2>How You Stay Safe</h2>
-        <p class="subtitle">Start locked down, open up as you build trust</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; margin-top: 0.8em; font-size: 0.65em; text-align: left;">
-
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
-            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">👤 allowFrom</div>
-            <div class="dim">Whitelist who can talk to your agent. Never run open-to-the-world. Start with just your own number.</div>
-          </div>
-
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
-            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🛡️ Tool policies & sandbox</div>
-            <div class="dim">Control what the agent can execute. Sandbox mode restricts filesystem access. Allowlists limit which commands are permitted.</div>
-          </div>
-
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
-            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🔑 Gateway auth token</div>
-            <div class="dim">Protect your WebSocket endpoint. Essential if you expose the gateway remotely via Tailscale or SSH tunnel.</div>
-          </div>
-
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
-            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🏠 Dedicated machine</div>
-            <div class="dim">Don't run it on your daily driver. Use a VM, VPS, old laptop, or Raspberry Pi. Isolate the blast radius.</div>
-          </div>
-
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
-            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">📱 Separate phone number</div>
-            <div class="dim">For WhatsApp: use a dedicated SIM. Don't link your personal WhatsApp — every message becomes agent input.</div>
-          </div>
-
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.2);">
-            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🐢 The trust gradient</div>
-            <div class="dim">Start with heartbeats off, strict allowlists, and read-only. Gradually give more access as you understand the agent's behavior.</div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- SLIDE 10: The vibe -->
+      <!-- SLIDE 15: The Real Point -->
       <section>
         <h2>The Real Point</h2>
         <br>
@@ -429,7 +504,7 @@
         </p>
       </section>
 
-      <!-- SLIDE 11: Q&A -->
+      <!-- SLIDE 16: Q&A -->
       <section>
         <h1 class="emoji-big">🦞</h1>
         <h2>Questions?</h2>
