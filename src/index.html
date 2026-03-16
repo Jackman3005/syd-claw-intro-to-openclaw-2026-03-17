@@ -564,24 +564,24 @@
             <div class="dim">The agent has real access to your filesystem. A hallucination, misunderstood instruction, or malicious prompt injection can delete files, install things, or run destructive commands. In the worst case, a compromised agent could turn your machine into something you didn't intend.</div>
           </div>
           <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
-            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🔌 It can act on your integrations</div>
-            <div class="dim">Whatever access you give it — messaging, calendar, email — it can use. A confused agent might post to the wrong channel, send an email you didn't intend, or create events.</div>
-          </div>
-          <div class="fragment" data-fragment-index="1" style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
             <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💉 Prompt injection is real</div>
             <div class="dim">Someone sends your agent a crafty message, and it follows <em>their</em> instructions instead of yours. Group chats and public channels are the biggest risk surface.</div>
           </div>
           <div class="fragment" data-fragment-index="1" style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
-            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💸 Token costs add up</div>
-            <div class="dim">Always-on means always-spending. Heartbeats, cron jobs, long conversations — each one is an API call. Easy to burn through credits without realizing.</div>
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🔌 It can act on your integrations</div>
+            <div class="dim">Whatever access you give it — messaging, calendar, email — it can use. A confused agent might post to the wrong channel, send an email you didn't intend, or create events.</div>
+          </div>
+          <div class="fragment" data-fragment-index="1" style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🔓 Know your identity model</div>
+            <div class="dim">On WhatsApp, the agent shares your phone number — messages appear to come from you. Use a dedicated number. On Discord and Telegram, it's a separate bot identity. Either way, <code>allowFrom</code> controls who can reach it.</div>
           </div>
           <div class="fragment" data-fragment-index="2" style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
             <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🤷 Large, fast-moving codebase</div>
             <div class="dim">400K+ lines, updating frequently. You're trusting a lot of code you haven't read. Breaking changes happen. Audit what you can.</div>
           </div>
           <div class="fragment" data-fragment-index="2" style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
-            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🔓 Know your identity model</div>
-            <div class="dim">On WhatsApp, the agent shares your phone number — messages appear to come from you. Use a dedicated number. On Discord and Telegram, it's a separate bot identity. Either way, <code>allowFrom</code> controls who can reach it.</div>
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💸 Token costs add up</div>
+            <div class="dim">Always-on means always-spending. Heartbeats, cron jobs, long conversations — each one is an API call. Easy to burn through credits without realizing.</div>
           </div>
         </div>
       </section>
