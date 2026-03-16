@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is OpenClaw? — SydClaw Meetup</title>
+  <link rel="stylesheet" href="./reveal/reset.css">
+  <link rel="stylesheet" href="./reveal/reveal.css">
+  <link rel="stylesheet" href="./reveal/theme/black.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- SLIDE 1: Title -->
+      <section>
+        <h1>🦞 What is OpenClaw?</h1>
+        <p class="subtitle">And why is everyone losing their minds about it</p>
+        <br>
+        <p class="dim" style="font-size:0.6em;">Jack Coy · SydClaw Meetup · March 2026</p>
+        <div style="margin-top: 1em; display: flex; flex-direction: column; align-items: center; gap: 0.3em;">
+          <img src="./qr-slides.svg" style="width: 140px; height: 140px; filter: invert(1);" alt="QR code to slides">
+          <div class="dim" style="font-size: 0.5em;">View slides · Follow along on your phone</div>
+        </div>
+      </section>
+
+
+      <!-- SLIDE 2: The Hype -->
+      <section data-background-color="#0d1117">
+        <h2 style="margin-bottom: 0.1em;">The Hype Is Real</h2>
+
+        <!-- Top row: chart left, stats right — compact -->
+        <div style="display: flex; align-items: center; gap: 1em; margin: 0.5em auto 0; max-width: 900px;">
+          <div style="flex: 1; max-width: 480px;">
+            <svg viewBox="0 0 480 140" style="width: 100%; height: auto;">
+              <line x1="40" y1="120" x2="460" y2="120" stroke="#8b949e" stroke-width="0.5"/>
+              <line x1="40" y1="85" x2="460" y2="85" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
+              <line x1="40" y1="50" x2="460" y2="50" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
+              <line x1="40" y1="15" x2="460" y2="15" stroke="#8b949e" stroke-width="0.3" stroke-dasharray="4"/>
+              <text x="34" y="124" fill="#8b949e" font-size="8" text-anchor="end">0</text>
+              <text x="34" y="89" fill="#8b949e" font-size="8" text-anchor="end">100k</text>
+              <text x="34" y="54" fill="#8b949e" font-size="8" text-anchor="end">200k</text>
+              <text x="34" y="19" fill="#8b949e" font-size="8" text-anchor="end">310k</text>
+              <text x="55" y="134" fill="#8b949e" font-size="7">Nov 25</text>
+              <text x="165" y="134" fill="#8b949e" font-size="7">Jan 26</text>
+              <text x="305" y="134" fill="#8b949e" font-size="7">Feb 26</text>
+              <text x="420" y="134" fill="#8b949e" font-size="7">Mar 26</text>
+              <path d="M 55 120 C 90 119, 140 118, 170 116 C 205 113, 240 104, 300 78 C 335 62, 370 38, 415 20 C 430 15, 445 11, 455 9 L 455 120 Z"
+                    fill="url(#starGrad2)" opacity="0.3"/>
+              <path d="M 55 120 C 90 119, 140 118, 170 116 C 205 113, 240 104, 300 78 C 335 62, 370 38, 415 20 C 430 15, 445 11, 455 9"
+                    fill="none" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+              <path d="M 55 120 C 90 119, 140 118, 170 116 C 205 113, 240 104, 300 78 C 335 62, 370 38, 415 20 C 430 15, 445 11, 455 9"
+                    fill="none" stroke="#58a6ff" stroke-width="5" stroke-linecap="round" opacity="0.15"/>
+              <circle cx="455" cy="9" r="3" fill="#58a6ff"/>
+              <circle cx="455" cy="9" r="6" fill="#58a6ff" opacity="0.2"/>
+              <defs>
+                <linearGradient id="starGrad2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.4"/>
+                  <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div style="text-align: left;">
+            <div style="font-size: 1.3em; font-weight: bold; color: #58a6ff; line-height: 1.1;">310k ⭐ stars</div>
+            <div class="dim" style="font-size: 0.55em;">in ~4 months</div>
+            <div style="font-size: 0.55em; margin-top: 0.2em; color: #ffa657; font-weight: bold;">#9 GitHub repo of all time</div>
+            <div class="dim" style="font-size: 0.48em;">Surpassed React in 60 days</div>
+          </div>
+        </div>
+
+        <!-- Quotes grid — 3 columns, scattered feel -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5em; margin-top: 1em; padding: 0 0.5em; font-size: 0.46em;">
+
+          <div style="transform: rotate(-1.5deg); background: rgba(126,231,135,0.08); border-left: 3px solid rgba(126,231,135,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Cleared 10,000 emails from my inbox on day one."
+          </div>
+          <div style="transform: rotate(1deg); background: rgba(255,166,87,0.08); border-left: 3px solid rgba(255,166,87,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Rebuilt my entire site via Telegram while watching Netflix. Never opened my laptop."
+          </div>
+          <div style="transform: rotate(-0.5deg); background: rgba(88,166,255,0.08); border-left: 3px solid rgba(88,166,255,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Reviewed logs, identified root cause, fixed configs, redeployed. All over voice while walking the dog."
+          </div>
+
+          <div style="transform: rotate(0.5deg); background: rgba(248,81,73,0.06); border-left: 3px solid rgba(248,81,73,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Less than 24 hours in: cleaned up Linear issues, wrote email follow-ups, opened 3 PRs."
+          </div>
+          <div style="transform: rotate(-1deg); background: rgba(126,231,135,0.08); border-left: 3px solid rgba(126,231,135,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Built a weekly meal planning system. Shopping lists sorted by store and aisle."
+          </div>
+          <div style="transform: rotate(1.5deg); background: rgba(88,166,255,0.08); border-left: 3px solid rgba(88,166,255,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Morning brief: weather, calendar, health stats, trending topics, a quote from my books."
+          </div>
+
+          <div style="grid-column: 2; transform: rotate(-0.5deg); background: rgba(255,166,87,0.08); border-left: 3px solid rgba(255,166,87,0.5); border-radius: 4px 10px 10px 4px; padding: 0.4em 0.6em; font-style: italic;">
+            "Set up on my Raspberry Pi with Cloudflare. Built a website from my phone in minutes."
+          </div>
+
+        </div>
+
+        <p class="dim" style="font-size: 0.48em; margin-top: 0.8em;">
+          Real quotes from the community. So... let's talk about what this actually is.
+        </p>
+      </section>
+
+      <!-- SLIDE 3: The AI tool landscape -->
+      <section>
+        <h2>The AI Tool Landscape</h2>
+        <p class="subtitle">Where does OpenClaw fit?</p>
+        <div class="landscape-grid">
+          <div class="landscape-row">
+            <span class="landscape-label">💬 Chat UIs</span>
+            <span class="landscape-tools">ChatGPT, Claude.ai, Gemini</span>
+            <span class="landscape-desc">You go to a website, ask a question</span>
+          </div>
+          <div class="landscape-row">
+            <span class="landscape-label">💻 Coding Agents</span>
+            <span class="landscape-tools">Claude Code, Codex, Cursor</span>
+            <span class="landscape-desc">AI reads/writes code in your repo</span>
+          </div>
+          <div class="landscape-row">
+            <span class="landscape-label">⚡ Automation</span>
+            <span class="landscape-tools">Zapier, Make, n8n</span>
+            <span class="landscape-desc">When X happens → do Y. AI bolted on, not built in.</span>
+          </div>
+          <div class="landscape-row">
+            <span class="landscape-label">🔧 Agent Frameworks</span>
+            <span class="landscape-tools">LangChain, CrewAI, AutoGen</span>
+            <span class="landscape-desc">Dev tools to <em>build</em> agents</span>
+          </div>
+          <div class="landscape-row active">
+            <span class="landscape-label">🦞 Personal Agents</span>
+            <span class="landscape-tools">OpenClaw</span>
+            <span class="landscape-desc">Always-on AI that lives on your machine</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: The key shift -->
+      <section>
+        <h2>The Key Shift</h2>
+        <br>
+        <div class="compare-grid">
+          <div class="compare-box">
+            <h4 class="dim">🔍 Reactive AI</h4>
+            <ul>
+              <li>You go to the AI</li>
+              <li>You ask a question</li>
+              <li>You get an answer</li>
+              <li>Session ends</li>
+            </ul>
+            <p class="dim" style="font-size:0.85em; margin-top:0.8em;">ChatGPT, Claude.ai, coding agents...</p>
+          </div>
+          <div class="compare-box" style="border: 1px solid rgba(88,166,255,0.3);">
+            <h4 class="blue">🦞 Proactive AI</h4>
+            <ul>
+              <li>The AI is always running</li>
+              <li>It monitors, checks, schedules</li>
+              <li>It reaches out to <em>you</em></li>
+              <li>It remembers everything</li>
+            </ul>
+            <p class="blue" style="font-size:0.85em; margin-top:0.8em;">OpenClaw</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: OpenClaw vs Coding Agents -->
+      <section>
+        <h2>OpenClaw vs Coding Agents</h2>
+        <div class="compare-grid">
+          <div class="compare-box">
+            <h4 class="dim">💻 Claude Code / Codex</h4>
+            <ul>
+              <li>Lives in your terminal</li>
+              <li>You open it, use it, close it</li>
+              <li>Scoped to your codebase</li>
+              <li>No persistent memory</li>
+              <li>No messaging integration</li>
+              <li>Amazing at coding</li>
+            </ul>
+          </div>
+          <div class="compare-box" style="border: 1px solid rgba(88,166,255,0.3);">
+            <h4 class="blue">🦞 OpenClaw</h4>
+            <ul>
+              <li>Always running on your machine</li>
+              <li>Messages you on WhatsApp/Discord</li>
+              <li>Knows about your <em>life</em>, not just code</li>
+              <li>Persistent memory across sessions</li>
+              <li>Cron jobs, heartbeats, automation</li>
+              <li>Can spawn coding agents <em>inside</em> it</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dim" style="font-size:0.6em; margin-top:1em;">They're complementary, not competing. You can run Claude Code <em>as a sub-agent</em> inside OpenClaw.</p>
+      </section>
+
+      <!-- SLIDE 6: Architecture overview -->
+      <section>
+        <h2>How It Works</h2>
+        <p class="subtitle">Three core pieces</p>
+        <div class="arch-container">
+          <div class="arch-box arch-channels">
+            <div style="font-size:1.4em;">📱</div>
+            <div class="green" style="font-weight:bold;">Channels</div>
+            <div class="dim" style="font-size:0.85em; margin-top:0.3em;">
+              WhatsApp<br>Telegram<br>Discord<br>iMessage<br>Slack
+            </div>
+          </div>
+          <div class="arch-arrow">⟷</div>
+          <div class="arch-box arch-gateway">
+            <div style="font-size:1.4em;">🧠</div>
+            <div class="blue" style="font-weight:bold; font-size:1.1em;">Gateway</div>
+            <div class="dim" style="font-size:0.85em; margin-top:0.3em;">
+              Always-on daemon<br>Agent loop<br>Sessions & memory<br>Cron & heartbeats
+            </div>
+          </div>
+          <div class="arch-arrow">⟷</div>
+          <div class="arch-box arch-tools">
+            <div style="font-size:1.4em;">🔧</div>
+            <div class="orange" style="font-weight:bold;">Tools & Models</div>
+            <div class="dim" style="font-size:0.85em; margin-top:0.3em;">
+              Shell / filesystem<br>Web search / browser<br>Claude, GPT, Gemini<br>Sub-agents / nodes
+            </div>
+          </div>
+        </div>
+        <p class="dim" style="font-size:0.55em; margin-top:1.2em;">
+          Message comes in → Gateway runs agent turn → Agent thinks + uses tools → Response goes back out
+        </p>
+        <p style="font-size:0.45em; margin-top:0.5em; color: rgba(139,148,158,0.6);">
+          Also: Web Control UI · Nodes (iOS/Android/macOS) · Plugins — but the above is the core.
+        </p>
+      </section>
+
+      <!-- SLIDE 7: Features (technical reference) -->
+      <section>
+        <h2>Features</h2>
+        <p class="subtitle">A quick reference for the technically curious</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; margin-top: 0.8em; font-size: 0.6em; text-align: left;">
+
+          <div style="padding: 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div class="blue" style="font-weight: bold; margin-bottom: 0.3em;">💬 20+ Messaging Platforms</div>
+            <div class="dim">WhatsApp · Telegram · Discord · Signal · Slack · iMessage · LINE · Matrix · IRC · Teams · Twitch · Google Chat · Nostr · and more</div>
+          </div>
+
+          <div style="padding: 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div class="blue" style="font-weight: bold; margin-bottom: 0.3em;">🤖 Multi-Model Support</div>
+            <div class="dim">Claude · GPT · Gemini · Ollama · any OpenAI-compatible API. Switch models per task. Use local or remote.</div>
+          </div>
+
+          <div style="padding: 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div class="blue" style="font-weight: bold; margin-bottom: 0.3em;">📱 Nodes (iOS, Android, macOS)</div>
+            <div class="dim">Connect devices to extend the agent — phone camera, location, voice, notifications, contacts. Mac nodes add screen recording, canvas, and system control.</div>
+          </div>
+
+          <div style="padding: 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div class="blue" style="font-weight: bold; margin-bottom: 0.3em;">🤖 Sub-Agents</div>
+            <div class="dim">Spawn background workers for coding, research, or parallel tasks. Orchestrate multiple agents from one conversation.</div>
+          </div>
+
+          <div style="padding: 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div class="blue" style="font-weight: bold; margin-bottom: 0.3em;">⏰ Cron Jobs & Heartbeats</div>
+            <div class="dim">Schedule recurring tasks, periodic check-ins, monitoring. The agent wakes up on its own and acts.</div>
+          </div>
+
+          <div style="padding: 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div class="blue" style="font-weight: bold; margin-bottom: 0.3em;">🧩 Skills & ClawHub</div>
+            <div class="dim">Modular capability packages. Community marketplace. Install skills like npm packages for your agent.</div>
+          </div>
+
+          <div style="padding: 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div class="blue" style="font-weight: bold; margin-bottom: 0.3em;">🎙️ Voice & Media</div>
+            <div class="dim">Voice note transcription, text-to-speech, image generation, file attachments in and out.</div>
+          </div>
+
+          <div style="padding: 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div class="blue" style="font-weight: bold; margin-bottom: 0.3em;">🧠 Workspace & Sessions</div>
+            <div class="dim">Persistent workspace files, conversation history across channels, auto-compaction, semantic memory search over your notes.</div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Context is everything -->
+      <section>
+        <h2>Context Is Everything</h2>
+        <p class="subtitle">Same model. The only difference is what it knows.</p>
+
+        <div style="display: flex; gap: 0.7em; margin-top: 0.6em; font-size: 0.52em; text-align: left;">
+
+          <!-- Chat 1: Fresh session -->
+          <div style="flex: 1; display: flex; flex-direction: column;">
+            <div class="dim" style="font-weight: bold; text-align: center; margin-bottom: 0.4em; font-size: 1.1em;">Fresh session</div>
+            <div style="flex: 1; border-radius: 12px; background: rgba(255,255,255,0.03); padding: 0.7em; display: flex; flex-direction: column; justify-content: flex-end;">
+              <!-- Chat bubbles -->
+              <div style="background: rgba(88,166,255,0.2); padding: 0.4em 0.7em; border-radius: 10px 10px 2px 10px; margin-left: 2em; margin-bottom: 0.4em;">
+                What should I have for dinner?
+              </div>
+              <div style="background: rgba(255,255,255,0.06); padding: 0.4em 0.7em; border-radius: 10px 10px 10px 2px; margin-right: 2em;">
+                Here are some popular options: pasta, stir fry, tacos, grilled chicken, salad...
+              </div>
+              <div class="dim" style="text-align: center; margin-top: 0.6em; font-size: 0.9em;">
+                Generic answer.<br>Model knows nothing about you.
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat 2: Mid-conversation -->
+          <div style="flex: 1; display: flex; flex-direction: column;">
+            <div class="dim" style="font-weight: bold; text-align: center; margin-bottom: 0.4em; font-size: 1.1em;">Mid-conversation</div>
+            <div style="flex: 1; border-radius: 12px; background: rgba(255,255,255,0.03); padding: 0.7em; display: flex; flex-direction: column;">
+              <!-- Earlier messages faded -->
+              <div style="opacity: 0.4; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 0.4em; margin-bottom: 0.4em; font-size: 0.9em;">
+                <div style="background: rgba(88,166,255,0.15); padding: 0.3em 0.6em; border-radius: 8px; margin-left: 2em; margin-bottom: 0.3em;">
+                  ...yeah I'll try that recipe,<br>I've been vegetarian for years
+                </div>
+                <div style="text-align: center; color: rgba(255,255,255,0.3);">┈ 15 messages later ┈</div>
+              </div>
+              <!-- Current exchange -->
+              <div style="margin-top: auto;">
+                <div style="background: rgba(88,166,255,0.2); padding: 0.4em 0.7em; border-radius: 10px 10px 2px 10px; margin-left: 2em; margin-bottom: 0.4em;">
+                  What should I have for dinner?
+                </div>
+                <div style="background: rgba(255,255,255,0.06); padding: 0.4em 0.7em; border-radius: 10px 10px 10px 2px; margin-right: 2em;">
+                  Since you're vegetarian, how about a Thai basil tofu stir fry or a chickpea curry?
+                </div>
+                <div class="dim" style="text-align: center; margin-top: 0.6em; font-size: 0.9em;">
+                  Better — it remembered from earlier.<br><span class="orange">But resets next session.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat 3: OpenClaw -->
+          <div style="flex: 1; display: flex; flex-direction: column;">
+            <div class="blue" style="font-weight: bold; text-align: center; margin-bottom: 0.4em; font-size: 1.1em;">🦞 OpenClaw</div>
+            <div style="flex: 1; border-radius: 12px; background: rgba(88,166,255,0.05); border: 1px solid rgba(88,166,255,0.2); padding: 0.7em; display: flex; flex-direction: column;">
+              <!-- Loaded context block -->
+              <div style="background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.15); border-radius: 8px; padding: 0.5em; margin-bottom: 0.5em; font-size: 0.9em;">
+                <div class="blue" style="font-weight: bold; margin-bottom: 0.2em;">📂 Loaded before you type anything</div>
+                <div class="dim">
+                  SOUL.md · USER.md · AGENTS.md · TOOLS.md<br>
+                  <span style="opacity: 0.7;">"Jack is vegetarian, lives in Sydney,<br>wife Aom is Thai, loves spicy food..."</span>
+                </div>
+                <div class="blue" style="margin-top: 0.3em;">
+                  🔍 memory_search → <span class="dim">thai-recipes.md</span>
+                </div>
+              </div>
+              <!-- Chat bubbles -->
+              <div style="margin-top: auto;">
+                <div style="background: rgba(88,166,255,0.2); padding: 0.4em 0.7em; border-radius: 10px 10px 2px 10px; margin-left: 2em; margin-bottom: 0.4em;">
+                  What should I have for dinner?
+                </div>
+                <div style="background: rgba(255,255,255,0.06); padding: 0.4em 0.7em; border-radius: 10px 10px 10px 2px; margin-right: 2em;">
+                  It's 28° in Sydney tonight — perfect for that som tum recipe Aom showed you last week 🌶️
+                </div>
+                <div class="dim" style="text-align: center; margin-top: 0.6em; font-size: 0.9em;">
+                  Deeply personal from message one.<br><span class="green">Persists. You control all of it.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p style="font-size: 0.5em; margin-top: 0.5em;">
+          Same model, same mechanisms. <span class="highlight">The difference is what it knows before it starts thinking</span> — and how much of that <em>you</em> control.
+        </p>
+      </section>
+
+      <!-- SLIDE 9: The Workspace -->
+      <section>
+        <h2>The Workspace</h2>
+        <p class="subtitle">What makes your agent <em>yours</em></p>
+
+        <div style="display: flex; gap: 1.2em; margin-top: 0.5em; align-items: start;">
+
+          <!-- Left: file tree -->
+          <div>
+            <div class="tree" style="font-size: 0.58em; line-height: 1.7; margin: 0;">
+              <span class="dim">~/.openclaw/workspace/</span><br>
+              ├── <span class="file">SOUL.md</span><br>
+              ├── <span class="file">AGENTS.md</span><br>
+              ├── <span class="file">USER.md</span><br>
+              ├── <span class="file">MEMORY.md</span><br>
+              ├── <span class="file">TOOLS.md</span><br>
+              ├── <span class="file">HEARTBEAT.md</span><br>
+              └── <span class="dim">skills/</span>
+            </div>
+          </div>
+
+          <!-- Right: sample snippets -->
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5em; font-size: 0.5em;">
+
+            <div style="background: rgba(88,166,255,0.06); border: 1px solid rgba(88,166,255,0.2); border-radius: 8px; padding: 0.5em 0.7em;">
+              <div class="blue" style="font-weight: bold; margin-bottom: 0.2em;">SOUL.md</div>
+              <div style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #8b949e; line-height: 1.5;">
+                "Be genuinely helpful, not performatively helpful.<br>
+                Have opinions. Disagree, prefer things.<br>
+                Take initiative, not instructions.<br>
+                Funny and a bit unhinged — but can flip to<br>
+                serious instantly."
+              </div>
+            </div>
+
+            <div style="background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.2); border-radius: 8px; padding: 0.5em 0.7em;">
+              <div class="green" style="font-weight: bold; margin-bottom: 0.2em;">AGENTS.md</div>
+              <div style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #8b949e; line-height: 1.5;">
+                "Read SOUL.md — this is who you are.<br>
+                Read USER.md — this is who you're helping.<br>
+                Don't ask permission. Just do it.<br>
+                trash > rm. When in doubt, ask."
+              </div>
+            </div>
+
+            <div style="background: rgba(255,166,87,0.06); border: 1px solid rgba(255,166,87,0.2); border-radius: 8px; padding: 0.5em 0.7em;">
+              <div class="orange" style="font-weight: bold; margin-bottom: 0.2em;">USER.md</div>
+              <div style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #8b949e; line-height: 1.5;">
+                "Name: Jack · Timezone: Australia/Sydney<br>
+                Loves: retro gaming, Rocket League, ATLA<br>
+                Wife: Aom · Cat: Momo<br>
+                Wants an assistant that's a badass but also fun"
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <p style="font-size:0.55em; margin-top: 0.5em;">
+          Same model, same code, completely different agent.<br>
+          <span class="dim">Two people running OpenClaw will have totally different experiences.</span>
+        </p>
+      </section>
+
+
+      <!-- SLIDE 11: What people are doing with it (use cases) -->
+      <section>
+        <h2>What People Are Doing With It</h2>
+        <p class="subtitle">Real use cases from the community</p>
+        <div class="cap-grid">
+          <div class="cap-card">
+            <div class="cap-icon">📬</div>
+            <div class="cap-title">Inbox Management</div>
+            <div class="cap-desc">Triage emails, clear spam, draft replies, morning rollup. One user cleared 10,000 emails on day one.</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-icon">☀️</div>
+            <div class="cap-title">Daily Briefings</div>
+            <div class="cap-desc">Weather, calendar, reminders, health stats, trending topics, relevant reading — delivered every morning.</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-icon">🍳</div>
+            <div class="cap-title">Meal Planning & Groceries</div>
+            <div class="cap-desc">Weekly meal plans, shopping lists sorted by store and aisle, dinner reminders. Saves an hour a week.</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-icon">📱</div>
+            <div class="cap-title">Build From Your Phone</div>
+            <div class="cap-desc">"Rebuilt my entire website via Telegram while watching Netflix." Code, deploy, manage — no laptop needed.</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-icon">📋</div>
+            <div class="cap-title">Project Management</div>
+            <div class="cap-desc">Break down projects, manage GitHub/Linear issues, research before meetings, create invoices, track work.</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-icon">🏠</div>
+            <div class="cap-title">Smart Home & Life Admin</div>
+            <div class="cap-desc">Homey integration, cost tracking, school test reminders, calendar conflict resolution, voice control.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: What I'm actually doing with it -->
+      <section>
+        <h2>What I'm Doing With It</h2>
+        <p class="subtitle">Real examples, not hypotheticals</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em; margin-top: 0.5em; font-size: 0.58em; text-align: left;">
+          <div style="grid-column: 1 / 3; display: flex; gap: 1em; padding: 0.6em; border-radius: 10px; background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.2); align-items: center;">
+            <div style="flex: 1;">
+              <div class="blue" style="font-weight: bold; margin-bottom: 0.2em;">🎮 Personal Video Game Assistant</div>
+              <div class="dim">Built & iterated a full item, weapon, crafting & enemy database for a game I play. Hundreds of items, search, filters, Playwright tests.</div>
+            </div>
+            <img src="./arc-raiders.png" style="width: 260px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);" alt="Arc Raiders Database">
+          </div>
+          <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div style="font-weight: bold; margin-bottom: 0.15em;">👶 Gender Reveal Site</div>
+            <div class="dim">Live voting, AI-generated images, photo gallery, bilingual — built in one session.</div>
+          </div>
+          <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div style="font-weight: bold; margin-bottom: 0.15em;">📅 Calendar & Reminders</div>
+            <div class="dim">Birthday reminders, gift ideas, upcoming event alerts. Proactively checks my calendar and nudges me before things sneak up.</div>
+          </div>
+          <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div style="font-weight: bold; margin-bottom: 0.15em;">📊 Automated Monitoring</div>
+            <div class="dim">Media server health checks, OpenClaw update alerts, GitHub issue watching — reports posted to Discord daily.</div>
+          </div>
+          <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div style="font-weight: bold; margin-bottom: 0.15em;">🤖 Bot-to-Bot Collaboration</div>
+            <div class="dim">"Check when Daniel and I can meet next week for dinner." My agent and a friend's agent talk on Discord, coordinating across calendars and collaborating on designs.</div>
+          </div>
+          <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03); opacity: 0.85;">
+            <div style="font-weight: bold; margin-bottom: 0.15em;">🎤 This Slide Deck</div>
+            <div class="dim">Built by chatting with my agent in a Discord thread. It wrote the code, pushed to GitHub.</div>
+          </div>
+          <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div style="font-weight: bold; margin-bottom: 0.15em;">💬 Replaced ChatGPT & Claude Desktop</div>
+            <div class="dim">All my AI usage goes through OpenClaw now. Discord threads feel like chat sessions — but persistent and connected.</div>
+          </div>
+          <div style="grid-column: 1 / 3; padding: 0.5em 0.6em; border-radius: 10px; background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.15); text-align: center;">
+            <span class="green" style="font-weight: bold;">🧠 Memory System</span>
+            <span class="dim"> — Observes, reflects, consolidates. <em>More in my next talk →</em></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Where does your data go? -->
+      <section>
+        <h2>Where Does Your Data Go?</h2>
+        <p class="subtitle">Know the boundaries before you share your secrets</p>
+
+        <div style="display: flex; justify-content: center; align-items: start; gap: 1em; margin-top: 1em; font-size: 0.6em;">
+
+          <!-- Your Machine -->
+          <div style="min-width: 180px; padding: 0.8em; border-radius: 12px; background: rgba(126,231,135,0.1); border: 1px solid rgba(126,231,135,0.3); text-align: center;">
+            <div style="font-size: 1.5em;">🏠</div>
+            <div class="green" style="font-weight: bold; margin: 0.3em 0;">Your Machine</div>
+            <div class="dim" style="font-size: 0.9em; text-align: left;">
+              Workspace files<br>
+              Memory & history<br>
+              Config & secrets<br>
+              Session transcripts
+            </div>
+            <div class="green" style="margin-top: 0.5em; font-size: 0.85em;">✅ You control this</div>
+          </div>
+
+          <!-- Arrows out -->
+          <div style="display: flex; flex-direction: column; gap: 1.5em; padding-top: 1em;">
+            <div style="text-align: center;">
+              <div class="dim">→ prompts →</div>
+            </div>
+            <div style="text-align: center;">
+              <div class="dim">→ messages →</div>
+            </div>
+            <div style="text-align: center;">
+              <div class="dim">→ fetches →</div>
+            </div>
+          </div>
+
+          <!-- External destinations -->
+          <div style="display: flex; flex-direction: column; gap: 0.6em;">
+            <div style="padding: 0.6em 0.8em; border-radius: 10px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.2);">
+              <div class="orange" style="font-weight: bold;">🤖 LLM Provider *</div>
+              <div class="dim" style="font-size: 0.9em;">Anthropic, OpenAI, Google...<br>Sees everything in your prompt:<br>workspace files, memory, conversation</div>
+            </div>
+            <div style="padding: 0.6em 0.8em; border-radius: 10px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.2);">
+              <div class="orange" style="font-weight: bold;">💬 Connected Services</div>
+              <div class="dim" style="font-size: 0.9em;">Discord, WhatsApp, Calendar, Email...<br>Can send messages, create events,<br>post data on your behalf</div>
+            </div>
+            <div style="padding: 0.6em 0.8em; border-radius: 10px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.2);">
+              <div class="orange" style="font-weight: bold;">🌐 The Internet</div>
+              <div class="dim" style="font-size: 0.9em;">Web search, file downloads,<br>APIs and websites<br><br>The agent can reach out to any<br>public internet resource</div>
+            </div>
+          </div>
+
+        </div>
+
+        <p style="font-size: 0.55em; margin-top: 0.8em;">
+          <span class="highlight">* Self-hosted LLM?</span> Prompts stay on your network. <span class="dim">Remote LLM? Your context leaves your machine with every request.</span>
+        </p>
+      </section>
+
+      <!-- SLIDE 13: What Could Go Wrong -->
+      <section>
+        <h2>What Could Go Wrong</h2>
+        <p class="subtitle">Honest risks — you should know these before you start</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; margin-top: 0.8em; font-size: 0.65em; text-align: left;">
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💻 It runs commands on your machine</div>
+            <div class="dim">The agent has real access to your filesystem. A hallucination, misunderstood instruction, or malicious prompt injection can delete files, install things, or run destructive commands. In the worst case, a compromised agent could turn your machine into something you didn't intend.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🔌 It can act on your integrations</div>
+            <div class="dim">Whatever access you give it — messaging, calendar, email — it can use. A confused agent might post to the wrong channel, send an email you didn't intend, or create events.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💉 Prompt injection is real</div>
+            <div class="dim">Someone sends your agent a crafty message, and it follows <em>their</em> instructions instead of yours. Group chats and public channels are the biggest risk surface.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💸 Token costs add up</div>
+            <div class="dim">Always-on means always-spending. Heartbeats, cron jobs, long conversations — each one is an API call. Easy to burn through credits without realizing.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🤷 Large, fast-moving codebase</div>
+            <div class="dim">430K+ lines, updating frequently. You're trusting a lot of code you haven't read. Breaking changes happen. Audit what you can.</div>
+          </div>
+          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+            <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🔓 Know your identity model</div>
+            <div class="dim">On WhatsApp, the agent shares your phone number — messages appear to come from you. Use a dedicated number. On Discord and Telegram, it's a separate bot identity. Either way, <code>allowFrom</code> controls who can reach it.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 14: Managing Your Risk -->
+      <section>
+        <h2>Managing Your Risk</h2>
+        <p class="subtitle">It can only do what you've given it access to</p>
+
+        <div style="display: flex; gap: 1em; margin-top: 0.8em; font-size: 0.6em; text-align: left; align-items: stretch;">
+
+          <!-- Left: the principle -->
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 0.6em;">
+            <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.15);">
+              <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🧠 Be intentional about what you connect</div>
+              <div class="dim">Every integration you add is access you're granting — permanently, until you revoke it. Only connect what you need, when you need it, with the minimum scope to get the job done.</div>
+            </div>
+            <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.15);">
+              <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">🔍 Understand what you're actually exposing</div>
+              <div class="dim">"Read my recent emails" might mean access to <em>all</em> emails — and possibly send permissions too. A calendar integration for reminders might also let it create or delete events. Know what each permission actually grants — not just what you intend to use it for.</div>
+            </div>
+            <div style="padding: 0.7em; border-radius: 10px; background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.15);">
+              <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">⚠️ Every scope is an attack surface</div>
+              <div class="dim">The agent might misinterpret "clean up those emails" and delete everything. Or a prompt injection could exploit access you've granted. The more integrations connected, the bigger the blast radius — whether from a mistake or an attack.</div>
+            </div>
+          </div>
+
+          <!-- Right: trust gradient -->
+          <div style="flex: 0.8; padding: 0.8em; border-radius: 12px; background: rgba(88,166,255,0.06); border: 1px solid rgba(88,166,255,0.2); display: flex; flex-direction: column; justify-content: center;">
+            <div class="blue" style="font-weight: bold; font-size: 1.1em; margin-bottom: 0.5em; text-align: center;">🐢 The Trust Gradient</div>
+            <div style="display: flex; flex-direction: column; gap: 0.5em;">
+              <div style="display: flex; align-items: center; gap: 0.5em;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #7ee787; flex-shrink: 0;"></div>
+                <div class="dim">Start with chat only — no integrations</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5em;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #58a6ff; flex-shrink: 0;"></div>
+                <div class="dim">Add tools as you need them</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5em;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #58a6ff; flex-shrink: 0;"></div>
+                <div class="dim">Observe how it behaves with each one</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5em;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #ffa657; flex-shrink: 0;"></div>
+                <div class="dim">Grant more access over time based on trust</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5em;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #ffa657; flex-shrink: 0;"></div>
+                <div class="dim">Stay conscious of your total exposure</div>
+              </div>
+            </div>
+            <div class="dim" style="text-align: center; margin-top: 0.6em; font-size: 0.9em; font-style: italic;">
+              Like onboarding a new employee —<br>more responsibility over time.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SLIDE 15: Where should I run this? -->
+      <section>
+        <h2>Where Should I Run This?</h2>
+        <p class="subtitle">Pick your setup based on your comfort level</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1em; margin-top: 1em; font-size: 0.62em; text-align: left;">
+
+          <div style="padding: 0.8em; border-radius: 12px; background: rgba(126,231,135,0.08); border: 1px solid rgba(126,231,135,0.25);">
+            <div style="font-size: 1.3em; margin-bottom: 0.3em;">🖥️</div>
+            <div class="green" style="font-weight: bold; margin-bottom: 0.3em;">Mac Mini / Dedicated Machine</div>
+            <div class="dim" style="margin-bottom: 0.4em;">The community favorite. Always on, low power, can run local models too.</div>
+            <div style="font-size: 0.9em;">
+              ✅ Full control<br>
+              ✅ Local LLM option<br>
+              ✅ No monthly cost<br>
+              <span class="dim">⚠️ Need to maintain it yourself</span>
+            </div>
+          </div>
+
+          <div style="padding: 0.8em; border-radius: 12px; background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.25);">
+            <div style="font-size: 1.3em; margin-bottom: 0.3em;">☁️</div>
+            <div class="blue" style="font-weight: bold; margin-bottom: 0.3em;">VPS / Cloud VM</div>
+            <div class="dim" style="margin-bottom: 0.4em;">Cheap Linux VM ($5-10/mo). Always on, nothing to maintain physically.</div>
+            <div style="font-size: 0.9em;">
+              ✅ Always available<br>
+              ✅ Easy to set up<br>
+              ✅ Remote by default<br>
+              <span class="dim">⚠️ Remote models only (usually)</span>
+            </div>
+          </div>
+
+          <div style="padding: 0.8em; border-radius: 12px; background: rgba(255,166,87,0.08); border: 1px solid rgba(255,166,87,0.25);">
+            <div style="font-size: 1.3em; margin-bottom: 0.3em;">⚠️</div>
+            <div class="orange" style="font-weight: bold; margin-bottom: 0.3em;">Your Daily Driver</div>
+            <div class="dim" style="margin-bottom: 0.4em;">Your laptop or desktop. Fine for experimenting, not great long-term.</div>
+            <div style="font-size: 0.9em;">
+              ✅ Nothing extra to buy<br>
+              ✅ Good for trying it out<br>
+              <span class="red">⚠️ Agent has access to everything</span><br>
+              <span class="red">⚠️ Stops when you close the lid</span>
+            </div>
+          </div>
+
+        </div>
+        <p class="dim" style="font-size: 0.55em; margin-top: 0.8em;">
+          Raspberry Pi also works great for a low-cost always-on setup. Isolate the agent from your personal files.
+        </p>
+      </section>
+
+      <!-- SLIDE 16: Getting Started -->
+      <section>
+        <h2>Getting Started</h2>
+        <p class="subtitle">~5 minutes to your first conversation</p>
+
+        <div style="margin-top: 1em; text-align: center;">
+          <code style="background: rgba(255,255,255,0.08); padding: 0.4em 0.8em; border-radius: 8px; font-size: 0.8em;">curl -fsSL https://openclaw.ai/install.sh | bash</code>
+          <p class="dim" style="font-size: 0.5em; margin-top: 0.3em;">Mac, Linux, WSL2, Raspberry Pi — handles everything.</p>
+        </div>
+
+        <div class="steps" style="margin-top: 1em;">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <strong>Get a machine</strong><br>
+              <span class="dim">A VPS, spare laptop, Mac Mini, Raspberry Pi — anything that stays on.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <strong>Run the install script</strong><br>
+              <span class="dim">It installs OpenClaw, walks you through setup, and adds your API key.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <strong>Connect a channel</strong><br>
+              <span class="dim">Telegram is the fastest. Discord for power users. WhatsApp via QR scan.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <strong>Say hello 🦞</strong><br>
+              <span class="dim">Your agent is live. Start chatting and see what happens.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 17: Pro tip — Use Discord -->
+      <section>
+        <h2>Pro Tip: Use Discord</h2>
+        <p class="subtitle">My preferred setup — and why</p>
+
+        <div style="display: flex; gap: 1.2em; margin-top: 0.6em; font-size: 0.58em; text-align: left; align-items: start;">
+
+          <!-- Left: screenshot -->
+          <div style="flex-shrink: 0;">
+            <img src="./discord-channels.png" style="height: 380px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);" alt="Discord channel structure">
+          </div>
+
+          <!-- Right: pitch points -->
+          <div style="display: flex; flex-direction: column; gap: 0.5em;">
+
+            <div style="padding: 0.5em 0.6em; border-radius: 8px; background: rgba(88,166,255,0.08);">
+              <div class="blue" style="font-weight: bold; margin-bottom: 0.2em;">🧵 Threading is a game changer</div>
+              <div class="dim">Start a thread for any topic — feels like opening a new ChatGPT session. Temporary, focused, searchable later. Way better than one long chat.</div>
+            </div>
+
+            <div style="padding: 0.5em 0.6em; border-radius: 8px; background: rgba(88,166,255,0.08);">
+              <div class="blue" style="font-weight: bold; margin-bottom: 0.2em;">📂 Channels organize your life</div>
+              <div class="dim">Each channel gets its own session context. Use your agent to generate a channel structure that reflects your life and projects.</div>
+            </div>
+
+            <div style="padding: 0.5em 0.6em; border-radius: 8px; background: rgba(88,166,255,0.08);">
+              <div class="blue" style="font-weight: bold; margin-bottom: 0.2em;">🔕 Mute the server, get pinged when it matters</div>
+              <div class="dim">I mute the whole server — the agent pings me when something needs attention. No notification fatigue. Check in on your own schedule.</div>
+            </div>
+
+            <div style="padding: 0.5em 0.6em; border-radius: 8px; background: rgba(255,255,255,0.03);">
+              <div style="font-weight: bold; margin-bottom: 0.2em;">⚡ Setup tips</div>
+              <div class="dim">
+                • Dedicated private server (not a shared one)<br>
+                • Set <code>requireMention: false</code> so it responds to everything<br>
+                • Bot setup is a bit more involved than Telegram — use an AI to walk you through it<br>
+                • No reason to pick just one — Telegram is great for getting started fast
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 18: The Real Point -->
+      <section>
+        <h2>The Real Point</h2>
+        <br>
+        <p style="font-size:1.1em;">
+          OpenClaw is <span class="highlight">infrastructure for a personal AI agent</span>
+          <br>that actually integrates into your life.
+        </p>
+        <br>
+        <p class="dim" style="font-size:0.75em;">
+          Not another chat UI. Not another coding tool.<br>
+          An always-on assistant that knows you, learns from you,<br>
+          and reaches out when something matters.
+        </p>
+        <br>
+        <p style="font-size:0.65em;">
+          <a href="https://github.com/openclaw/openclaw" target="_blank" class="green" style="text-decoration: none;">github.com/openclaw/openclaw</a> · 
+          <a href="https://docs.openclaw.ai" target="_blank" class="blue" style="text-decoration: none;">docs.openclaw.ai</a> · 
+          <a href="https://clawhub.com" target="_blank" class="orange" style="text-decoration: none;">clawhub.com</a>
+        </p>
+      </section>
+
+      <!-- SLIDE 18: Q&A -->
+      <section>
+        <h1 class="emoji-big">🦞</h1>
+        <h2>Questions?</h2>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Fixed QR code overlay — outside reveal, screen-fixed -->
+  <div id="qr-overlay" style="position: fixed; top: 20px; right: 20px; z-index: 100; text-align: center; pointer-events: none;">
+    <img src="./qr-slides.svg" style="width: 120px; height: 120px; filter: invert(1); display: block;" alt="QR code">
+    <div style="color: #8b949e; font-size: 12px; margin-top: 4px; font-family: system-ui, sans-serif;">View Slides</div>
+  </div>
+
+  <script src="./reveal/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      controlsTutorial: false,
+      progress: true,
+      center: true,
+      width: 1280,
+      height: 720,
+    });
+
+    // Hide fixed QR on title slide (has its own), show on all others
+    const qr = document.getElementById('qr-overlay');
+    function toggleQR() {
+      const idx = Reveal.getIndices().h;
+      qr.style.display = (idx === 0) ? 'none' : 'block';
+    }
+    Reveal.on('slidechanged', toggleQR);
+    toggleQR();
+  </script>
+</body>
+</html>
