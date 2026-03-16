@@ -305,7 +305,7 @@
           </div>
 
           <!-- Chat 2: Mid-conversation -->
-          <div style="flex: 1; display: flex; flex-direction: column;">
+          <div class="fragment" style="flex: 1; display: flex; flex-direction: column;">
             <div class="dim" style="font-weight: bold; text-align: center; margin-bottom: 0.4em; font-size: 1.1em;">Mid-conversation</div>
             <div style="flex: 1; border-radius: 12px; background: rgba(255,255,255,0.03); padding: 0.7em; display: flex; flex-direction: column;">
               <!-- Earlier messages faded -->
@@ -331,7 +331,7 @@
           </div>
 
           <!-- Chat 3: OpenClaw -->
-          <div style="flex: 1; display: flex; flex-direction: column;">
+          <div class="fragment" style="flex: 1; display: flex; flex-direction: column;">
             <div class="blue" style="font-weight: bold; text-align: center; margin-bottom: 0.4em; font-size: 1.1em;">🦞 OpenClaw</div>
             <div style="flex: 1; border-radius: 12px; background: rgba(88,166,255,0.05); border: 1px solid rgba(88,166,255,0.2); padding: 0.7em; display: flex; flex-direction: column;">
               <!-- Loaded context block -->
@@ -378,8 +378,8 @@
           <div>
             <div class="tree" style="font-size: 0.58em; line-height: 1.7; margin: 0;">
               <span class="dim">~/.openclaw/workspace/</span><br>
-              ├── <span class="file">SOUL.md</span><br>
               ├── <span class="file">AGENTS.md</span><br>
+              ├── <span class="file">SOUL.md</span><br>
               ├── <span class="file">USER.md</span><br>
               ├── <span class="file">MEMORY.md</span><br>
               ├── <span class="file">TOOLS.md</span><br>
@@ -391,6 +391,16 @@
           <!-- Right: sample snippets -->
           <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5em; font-size: 0.5em;">
 
+            <div style="background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.2); border-radius: 8px; padding: 0.5em 0.7em;">
+              <div class="green" style="font-weight: bold; margin-bottom: 0.2em;">AGENTS.md</div>
+              <div style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #8b949e; line-height: 1.5;">
+                "Read SOUL.md — this is who you are.<br>
+                Read USER.md — this is who you're helping.<br>
+                Don't ask permission. Just do it.<br>
+                trash > rm. When in doubt, ask."
+              </div>
+            </div>
+
             <div style="background: rgba(88,166,255,0.06); border: 1px solid rgba(88,166,255,0.2); border-radius: 8px; padding: 0.5em 0.7em;">
               <div class="blue" style="font-weight: bold; margin-bottom: 0.2em;">SOUL.md</div>
               <div style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #8b949e; line-height: 1.5;">
@@ -399,16 +409,6 @@
                 Take initiative, not instructions.<br>
                 Funny and a bit unhinged — but can flip to<br>
                 serious instantly."
-              </div>
-            </div>
-
-            <div style="background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.2); border-radius: 8px; padding: 0.5em 0.7em;">
-              <div class="green" style="font-weight: bold; margin-bottom: 0.2em;">AGENTS.md</div>
-              <div style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #8b949e; line-height: 1.5;">
-                "Read SOUL.md — this is who you are.<br>
-                Read USER.md — this is who you're helping.<br>
-                Don't ask permission. Just do it.<br>
-                trash > rm. When in doubt, ask."
               </div>
             </div>
 
@@ -465,7 +465,7 @@
           <div class="cap-card">
             <div class="cap-icon">🏠</div>
             <div class="cap-title">Smart Home & Life Admin</div>
-            <div class="cap-desc">Homey integration, cost tracking, school test reminders, calendar conflict resolution, voice control.</div>
+            <div class="cap-desc">Home Assistant &amp; Homey integrations, cost tracking, school test reminders, calendar conflict resolution, voice control.</div>
           </div>
         </div>
       </section>
@@ -474,39 +474,31 @@
       <section>
         <h2>What I'm Doing With It</h2>
         <p class="subtitle">Real examples, not hypotheticals</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em; margin-top: 0.5em; font-size: 0.58em; text-align: left;">
-          <div style="grid-column: 1 / 3; display: flex; gap: 1em; padding: 0.6em; border-radius: 10px; background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.2); align-items: center;">
-            <div style="flex: 1;">
-              <div class="blue" style="font-weight: bold; margin-bottom: 0.2em;">🎮 Personal Video Game Assistant</div>
-              <div class="dim">Built & iterated a full item, weapon, crafting & enemy database for a game I play. Hundreds of items, search, filters, Playwright tests.</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; margin-top: 0.6em; font-size: 0.62em; text-align: left;">
+          <div style="padding: 0.6em 0.7em; border-radius: 10px; background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.2);">
+            <div class="blue" style="font-weight: bold; margin-bottom: 0.2em;">🌐 Sites Built for Family & Friends</div>
+            <div class="dim">
+              • Video game database — items, weapons, crafting, enemies, search, Playwright tests<br>
+              • Gender reveal site — live voting, AI images, photo gallery, bilingual. Built in one session.
             </div>
-            <img src="./arc-raiders.png" style="width: 260px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);" alt="Arc Raiders Database">
           </div>
-          <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
-            <div style="font-weight: bold; margin-bottom: 0.15em;">👶 Gender Reveal Site</div>
-            <div class="dim">Live voting, AI-generated images, photo gallery, bilingual — built in one session.</div>
-          </div>
-          <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
-            <div style="font-weight: bold; margin-bottom: 0.15em;">📅 Calendar & Reminders</div>
-            <div class="dim">Birthday reminders, gift ideas, upcoming event alerts. Proactively checks my calendar and nudges me before things sneak up.</div>
-          </div>
-          <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
-            <div style="font-weight: bold; margin-bottom: 0.15em;">📊 Automated Monitoring</div>
+          <div style="padding: 0.6em 0.7em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div style="font-weight: bold; margin-bottom: 0.2em;">📊 Automated Monitoring</div>
             <div class="dim">Media server health checks, OpenClaw update alerts, GitHub issue watching — reports posted to Discord daily.</div>
           </div>
-          <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
-            <div style="font-weight: bold; margin-bottom: 0.15em;">🤖 Bot-to-Bot Collaboration</div>
-            <div class="dim">"Check when Daniel and I can meet next week for dinner." My agent and a friend's agent talk on Discord, coordinating across calendars and collaborating on designs.</div>
+          <div style="padding: 0.6em 0.7em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div style="font-weight: bold; margin-bottom: 0.2em;">🤖 Bot-to-Bot Collaboration</div>
+            <div class="dim">My agent and a friend's agent talk on Discord — coordinating dinner plans across calendars, collaborating on designs.</div>
           </div>
-          <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03); opacity: 0.85;">
-            <div style="font-weight: bold; margin-bottom: 0.15em;">🎤 This Slide Deck</div>
-            <div class="dim">Built by chatting with my agent in a Discord thread. It wrote the code, pushed to GitHub.</div>
+          <div style="padding: 0.6em 0.7em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div style="font-weight: bold; margin-bottom: 0.2em;">🎤 This Slide Deck</div>
+            <div class="dim">Built by chatting with my agent in a Discord thread. It wrote the code, fact-checked the claims, pushed to GitHub.</div>
           </div>
-          <div style="padding: 0.5em 0.6em; border-radius: 10px; background: rgba(255,255,255,0.03);">
-            <div style="font-weight: bold; margin-bottom: 0.15em;">💬 Replaced ChatGPT & Claude Desktop</div>
-            <div class="dim">All my AI usage goes through OpenClaw now. Discord threads feel like chat sessions — but persistent and connected.</div>
+          <div style="grid-column: 1 / 3; padding: 0.6em 0.7em; border-radius: 10px; background: rgba(255,255,255,0.03);">
+            <div style="font-weight: bold; margin-bottom: 0.2em;">💬 Replaced ChatGPT & Claude Desktop</div>
+            <div class="dim">All my AI usage goes through OpenClaw now. Discord threads feel like chat sessions — but persistent and connected to everything else.</div>
           </div>
-          <div style="grid-column: 1 / 3; padding: 0.5em 0.6em; border-radius: 10px; background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.15); text-align: center;">
+          <div style="grid-column: 1 / 3; padding: 0.5em 0.7em; border-radius: 10px; background: rgba(126,231,135,0.06); border: 1px solid rgba(126,231,135,0.15); text-align: center;">
             <span class="green" style="font-weight: bold;">🧠 Memory System</span>
             <span class="dim"> — Observes, reflects, consolidates. <em>More in my next talk →</em></span>
           </div>
@@ -582,19 +574,19 @@
             <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🔌 It can act on your integrations</div>
             <div class="dim">Whatever access you give it — messaging, calendar, email — it can use. A confused agent might post to the wrong channel, send an email you didn't intend, or create events.</div>
           </div>
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+          <div class="fragment" data-fragment-index="1" style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
             <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💉 Prompt injection is real</div>
             <div class="dim">Someone sends your agent a crafty message, and it follows <em>their</em> instructions instead of yours. Group chats and public channels are the biggest risk surface.</div>
           </div>
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+          <div class="fragment" data-fragment-index="1" style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
             <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">💸 Token costs add up</div>
             <div class="dim">Always-on means always-spending. Heartbeats, cron jobs, long conversations — each one is an API call. Easy to burn through credits without realizing.</div>
           </div>
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+          <div class="fragment" data-fragment-index="2" style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
             <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🤷 Large, fast-moving codebase</div>
             <div class="dim">400K+ lines, updating frequently. You're trusting a lot of code you haven't read. Breaking changes happen. Audit what you can.</div>
           </div>
-          <div style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
+          <div class="fragment" data-fragment-index="2" style="padding: 0.7em; border-radius: 10px; background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2);">
             <div class="red" style="font-weight: bold; margin-bottom: 0.3em;">🔓 Know your identity model</div>
             <div class="dim">On WhatsApp, the agent shares your phone number — messages appear to come from you. Use a dedicated number. On Discord and Telegram, it's a separate bot identity. Either way, <code>allowFrom</code> controls who can reach it.</div>
           </div>
